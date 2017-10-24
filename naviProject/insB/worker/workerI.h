@@ -1,8 +1,8 @@
 //Todo:additional includes
 
 //End
+
 #include <Ice/Ice.h>
-#include <IceStorm/IceStorm.h>
 #include <IceUtil/IceUtil.h>
 #include <string>
 #include <iostream>
@@ -15,32 +15,32 @@ using namespace Demo;
 
 class insBI : public insB {
 public:
-	virtual void initWorker(const managerPrx& proxy, double startTime, double step, const Current&);
-	virtual void HANDLEevOrder(double currentTime, const Current&);
+	virtual void initEvent(const eventManagerPrx& proxy, const Current&);
+	virtual void initTime(const timeManagerPrx& proxy, double startTime, double step, const Current&);
 	virtual void HANDLEevent(const event& ev, const Current&);
+	virtual void HANDLEtime(double currentTime, const Current&);
 	virtual void shutdown(const Current&);
 private:
-	managerPrx proxy;
+	eventManagerPrx eventProxy;
+	timeManagerPrx timeProxy;
 	double currentTime;
 	double step;
-	int currentNumber;
-	int inventory;
+
+	//实体信息
 	struct entity {
 		//Todo:entity information
 
 		//end
 	};
 	vector<entity>EL;
+	int currentNumber;
+	int inventory;
+
+	//事件信息
 	vector<event>FEL;
-
-	CommunicatorPtr ic1;
 	static bool comp(event, event);
-	void publishEvent(event);
 	void tick();
-
-	
 	void HANDLEevFromA(event ev);
-
 
 	//Todo:user-define functions
 	

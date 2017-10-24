@@ -40,29 +40,43 @@
 namespace
 {
 
-const ::std::string __Demo__manager__initialList_name = "initialList";
+const ::std::string __Demo__eventManager__initList_name = "initList";
 
-const ::std::string __Demo__manager__checkList_name = "checkList";
+const ::std::string __Demo__eventManager__initProxy_name = "initProxy";
 
-const ::std::string __Demo__manager__confirmTime_name = "confirmTime";
+const ::std::string __Demo__eventManager__SENDevent_name = "SENDevent";
 
-const ::std::string __Demo__manager__HANDLEevent_name = "HANDLEevent";
+const ::std::string __Demo__eventManager__shutdown_name = "shutdown";
 
-const ::std::string __Demo__manager__shutdown_name = "shutdown";
+const ::std::string __Demo__timeManager__initList_name = "initList";
 
-const ::std::string __Demo__insA__initWorker_name = "initWorker";
+const ::std::string __Demo__timeManager__initProxy_name = "initProxy";
 
-const ::std::string __Demo__insA__HANDLEevOrder_name = "HANDLEevOrder";
+const ::std::string __Demo__timeManager__checkList_name = "checkList";
+
+const ::std::string __Demo__timeManager__confirmTime_name = "confirmTime";
+
+const ::std::string __Demo__timeManager__SENDtime_name = "SENDtime";
+
+const ::std::string __Demo__timeManager__shutdown_name = "shutdown";
+
+const ::std::string __Demo__insA__initEvent_name = "initEvent";
+
+const ::std::string __Demo__insA__initTime_name = "initTime";
 
 const ::std::string __Demo__insA__HANDLEevent_name = "HANDLEevent";
 
+const ::std::string __Demo__insA__HANDLEtime_name = "HANDLEtime";
+
 const ::std::string __Demo__insA__shutdown_name = "shutdown";
 
-const ::std::string __Demo__insB__initWorker_name = "initWorker";
+const ::std::string __Demo__insB__initEvent_name = "initEvent";
 
-const ::std::string __Demo__insB__HANDLEevOrder_name = "HANDLEevOrder";
+const ::std::string __Demo__insB__initTime_name = "initTime";
 
 const ::std::string __Demo__insB__HANDLEevent_name = "HANDLEevent";
+
+const ::std::string __Demo__insB__HANDLEtime_name = "HANDLEtime";
 
 const ::std::string __Demo__insB__shutdown_name = "shutdown";
 
@@ -71,10 +85,10 @@ const ::std::string __Demo__insB__shutdown_name = "shutdown";
 namespace Ice
 {
 }
-::IceProxy::Ice::Object* ::IceProxy::Demo::upCast(::IceProxy::Demo::manager* p) { return p; }
+::IceProxy::Ice::Object* ::IceProxy::Demo::upCast(::IceProxy::Demo::eventManager* p) { return p; }
 
 void
-::IceProxy::Demo::__read(::IceInternal::BasicStream* __is, ::IceInternal::ProxyHandle< ::IceProxy::Demo::manager>& v)
+::IceProxy::Demo::__read(::IceInternal::BasicStream* __is, ::IceInternal::ProxyHandle< ::IceProxy::Demo::eventManager>& v)
 {
     ::Ice::ObjectPrx proxy;
     __is->read(proxy);
@@ -84,15 +98,15 @@ void
     }
     else
     {
-        v = new ::IceProxy::Demo::manager;
+        v = new ::IceProxy::Demo::eventManager;
         v->__copyFrom(proxy);
     }
 }
 
 void
-IceProxy::Demo::manager::initialList(const ::Ice::Context* __ctx)
+IceProxy::Demo::eventManager::initList(const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__manager__initialList_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__eventManager__initList_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -100,8 +114,8 @@ IceProxy::Demo::manager::initialList(const ::Ice::Context* __ctx)
         try
         {
             __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::manager* __del = dynamic_cast< ::IceDelegate::Demo::manager*>(__delBase.get());
-            __del->initialList(__ctx, __observer);
+            ::IceDelegate::Demo::eventManager* __del = dynamic_cast< ::IceDelegate::Demo::eventManager*>(__delBase.get());
+            __del->initList(__ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -116,12 +130,12 @@ IceProxy::Demo::manager::initialList(const ::Ice::Context* __ctx)
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::manager::begin_initialList(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::eventManager::begin_initList(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__manager__initialList_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__eventManager__initList_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__manager__initialList_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__eventManager__initList_name, ::Ice::Normal, __ctx);
         __result->__writeEmptyParams();
         __result->__send(true);
     }
@@ -133,24 +147,318 @@ IceProxy::Demo::manager::begin_initialList(const ::Ice::Context* __ctx, const ::
 }
 
 void
-IceProxy::Demo::manager::end_initialList(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::eventManager::end_initList(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__manager__initialList_name);
+    __end(__result, __Demo__eventManager__initList_name);
 }
 
-bool
-IceProxy::Demo::manager::checkList(const ::Ice::Context* __ctx)
+void
+IceProxy::Demo::eventManager::initProxy(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__manager__checkList_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__eventManager__initProxy_name, __ctx);
     int __cnt = 0;
     while(true)
     {
         ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
         try
         {
-            __checkTwowayOnly(__Demo__manager__checkList_name);
             __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::manager* __del = dynamic_cast< ::IceDelegate::Demo::manager*>(__delBase.get());
+            ::IceDelegate::Demo::eventManager* __del = dynamic_cast< ::IceDelegate::Demo::eventManager*>(__delBase.get());
+            __del->initProxy(proxy, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::eventManager::begin_initProxy(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__eventManager__initProxy_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__eventManager__initProxy_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::eventManager::end_initProxy(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__eventManager__initProxy_name);
+}
+
+void
+IceProxy::Demo::eventManager::SENDevent(const ::Demo::event& ev, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__eventManager__SENDevent_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::eventManager* __del = dynamic_cast< ::IceDelegate::Demo::eventManager*>(__delBase.get());
+            __del->SENDevent(ev, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::eventManager::begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__eventManager__SENDevent_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__eventManager__SENDevent_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(ev);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::eventManager::end_SENDevent(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__eventManager__SENDevent_name);
+}
+
+void
+IceProxy::Demo::eventManager::shutdown(const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__eventManager__shutdown_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::eventManager* __del = dynamic_cast< ::IceDelegate::Demo::eventManager*>(__delBase.get());
+            __del->shutdown(__ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::eventManager::begin_shutdown(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__eventManager__shutdown_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__eventManager__shutdown_name, ::Ice::Normal, __ctx);
+        __result->__writeEmptyParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::eventManager::end_shutdown(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__eventManager__shutdown_name);
+}
+
+const ::std::string&
+IceProxy::Demo::eventManager::ice_staticId()
+{
+    return ::Demo::eventManager::ice_staticId();
+}
+
+::IceInternal::Handle< ::IceDelegateM::Ice::Object>
+IceProxy::Demo::eventManager::__createDelegateM()
+{
+    return ::IceInternal::Handle< ::IceDelegateM::Ice::Object>(new ::IceDelegateM::Demo::eventManager);
+}
+
+::IceInternal::Handle< ::IceDelegateD::Ice::Object>
+IceProxy::Demo::eventManager::__createDelegateD()
+{
+    return ::IceInternal::Handle< ::IceDelegateD::Ice::Object>(new ::IceDelegateD::Demo::eventManager);
+}
+
+::IceProxy::Ice::Object*
+IceProxy::Demo::eventManager::__newInstance() const
+{
+    return new eventManager;
+}
+::IceProxy::Ice::Object* ::IceProxy::Demo::upCast(::IceProxy::Demo::timeManager* p) { return p; }
+
+void
+::IceProxy::Demo::__read(::IceInternal::BasicStream* __is, ::IceInternal::ProxyHandle< ::IceProxy::Demo::timeManager>& v)
+{
+    ::Ice::ObjectPrx proxy;
+    __is->read(proxy);
+    if(!proxy)
+    {
+        v = 0;
+    }
+    else
+    {
+        v = new ::IceProxy::Demo::timeManager;
+        v->__copyFrom(proxy);
+    }
+}
+
+void
+IceProxy::Demo::timeManager::initList(const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__initList_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
+            __del->initList(__ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::timeManager::begin_initList(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__initList_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__timeManager__initList_name, ::Ice::Normal, __ctx);
+        __result->__writeEmptyParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::timeManager::end_initList(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__timeManager__initList_name);
+}
+
+void
+IceProxy::Demo::timeManager::initProxy(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__initProxy_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
+            __del->initProxy(proxy, startTime, step, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::timeManager::begin_initProxy(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__initProxy_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__timeManager__initProxy_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __os->write(startTime);
+        __os->write(step);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::timeManager::end_initProxy(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__timeManager__initProxy_name);
+}
+
+bool
+IceProxy::Demo::timeManager::checkList(const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__checkList_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __checkTwowayOnly(__Demo__timeManager__checkList_name);
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
             return __del->checkList(__ctx, __observer);
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -165,13 +473,13 @@ IceProxy::Demo::manager::checkList(const ::Ice::Context* __ctx)
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::manager::begin_checkList(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::timeManager::begin_checkList(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    __checkAsyncTwowayOnly(__Demo__manager__checkList_name);
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__manager__checkList_name, __del, __cookie);
+    __checkAsyncTwowayOnly(__Demo__timeManager__checkList_name);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__checkList_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__manager__checkList_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__timeManager__checkList_name, ::Ice::Normal, __ctx);
         __result->__writeEmptyParams();
         __result->__send(true);
     }
@@ -183,9 +491,9 @@ IceProxy::Demo::manager::begin_checkList(const ::Ice::Context* __ctx, const ::Ic
 }
 
 bool
-IceProxy::Demo::manager::end_checkList(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::timeManager::end_checkList(const ::Ice::AsyncResultPtr& __result)
 {
-    ::Ice::AsyncResult::__check(__result, this, __Demo__manager__checkList_name);
+    ::Ice::AsyncResult::__check(__result, this, __Demo__timeManager__checkList_name);
     bool __ret;
     bool __ok = __result->__wait();
     try
@@ -214,9 +522,9 @@ IceProxy::Demo::manager::end_checkList(const ::Ice::AsyncResultPtr& __result)
 }
 
 void
-IceProxy::Demo::manager::confirmTime(const ::std::string& modelName, const ::Ice::Context* __ctx)
+IceProxy::Demo::timeManager::confirmTime(const ::std::string& modelName, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__manager__confirmTime_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__confirmTime_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -224,7 +532,7 @@ IceProxy::Demo::manager::confirmTime(const ::std::string& modelName, const ::Ice
         try
         {
             __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::manager* __del = dynamic_cast< ::IceDelegate::Demo::manager*>(__delBase.get());
+            ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
             __del->confirmTime(modelName, __ctx, __observer);
             return;
         }
@@ -240,12 +548,12 @@ IceProxy::Demo::manager::confirmTime(const ::std::string& modelName, const ::Ice
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::manager::begin_confirmTime(const ::std::string& modelName, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::timeManager::begin_confirmTime(const ::std::string& modelName, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__manager__confirmTime_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__confirmTime_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__manager__confirmTime_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__timeManager__confirmTime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(modelName);
         __result->__endWriteParams();
@@ -259,15 +567,15 @@ IceProxy::Demo::manager::begin_confirmTime(const ::std::string& modelName, const
 }
 
 void
-IceProxy::Demo::manager::end_confirmTime(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::timeManager::end_confirmTime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__manager__confirmTime_name);
+    __end(__result, __Demo__timeManager__confirmTime_name);
 }
 
 void
-IceProxy::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __ctx)
+IceProxy::Demo::timeManager::SENDtime(::Ice::Double currentTime, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__manager__HANDLEevent_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__SENDtime_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -275,8 +583,8 @@ IceProxy::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Conte
         try
         {
             __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::manager* __del = dynamic_cast< ::IceDelegate::Demo::manager*>(__delBase.get());
-            __del->HANDLEevent(ev, __ctx, __observer);
+            ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
+            __del->SENDtime(currentTime, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -291,14 +599,14 @@ IceProxy::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Conte
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::manager::begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::timeManager::begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__manager__HANDLEevent_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__SENDtime_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__manager__HANDLEevent_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__timeManager__SENDtime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
-        __os->write(ev);
+        __os->write(currentTime);
         __result->__endWriteParams();
         __result->__send(true);
     }
@@ -310,15 +618,15 @@ IceProxy::Demo::manager::begin_HANDLEevent(const ::Demo::event& ev, const ::Ice:
 }
 
 void
-IceProxy::Demo::manager::end_HANDLEevent(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::timeManager::end_SENDtime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__manager__HANDLEevent_name);
+    __end(__result, __Demo__timeManager__SENDtime_name);
 }
 
 void
-IceProxy::Demo::manager::shutdown(const ::Ice::Context* __ctx)
+IceProxy::Demo::timeManager::shutdown(const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__manager__shutdown_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__shutdown_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -326,7 +634,7 @@ IceProxy::Demo::manager::shutdown(const ::Ice::Context* __ctx)
         try
         {
             __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::manager* __del = dynamic_cast< ::IceDelegate::Demo::manager*>(__delBase.get());
+            ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
             __del->shutdown(__ctx, __observer);
             return;
         }
@@ -342,12 +650,12 @@ IceProxy::Demo::manager::shutdown(const ::Ice::Context* __ctx)
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::manager::begin_shutdown(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::timeManager::begin_shutdown(const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__manager__shutdown_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__shutdown_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__manager__shutdown_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__timeManager__shutdown_name, ::Ice::Normal, __ctx);
         __result->__writeEmptyParams();
         __result->__send(true);
     }
@@ -359,33 +667,33 @@ IceProxy::Demo::manager::begin_shutdown(const ::Ice::Context* __ctx, const ::Ice
 }
 
 void
-IceProxy::Demo::manager::end_shutdown(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::timeManager::end_shutdown(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__manager__shutdown_name);
+    __end(__result, __Demo__timeManager__shutdown_name);
 }
 
 const ::std::string&
-IceProxy::Demo::manager::ice_staticId()
+IceProxy::Demo::timeManager::ice_staticId()
 {
-    return ::Demo::manager::ice_staticId();
+    return ::Demo::timeManager::ice_staticId();
 }
 
 ::IceInternal::Handle< ::IceDelegateM::Ice::Object>
-IceProxy::Demo::manager::__createDelegateM()
+IceProxy::Demo::timeManager::__createDelegateM()
 {
-    return ::IceInternal::Handle< ::IceDelegateM::Ice::Object>(new ::IceDelegateM::Demo::manager);
+    return ::IceInternal::Handle< ::IceDelegateM::Ice::Object>(new ::IceDelegateM::Demo::timeManager);
 }
 
 ::IceInternal::Handle< ::IceDelegateD::Ice::Object>
-IceProxy::Demo::manager::__createDelegateD()
+IceProxy::Demo::timeManager::__createDelegateD()
 {
-    return ::IceInternal::Handle< ::IceDelegateD::Ice::Object>(new ::IceDelegateD::Demo::manager);
+    return ::IceInternal::Handle< ::IceDelegateD::Ice::Object>(new ::IceDelegateD::Demo::timeManager);
 }
 
 ::IceProxy::Ice::Object*
-IceProxy::Demo::manager::__newInstance() const
+IceProxy::Demo::timeManager::__newInstance() const
 {
-    return new manager;
+    return new timeManager;
 }
 ::IceProxy::Ice::Object* ::IceProxy::Demo::upCast(::IceProxy::Demo::insA* p) { return p; }
 
@@ -406,9 +714,9 @@ void
 }
 
 void
-IceProxy::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx)
+IceProxy::Demo::insA::initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__initWorker_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__initEvent_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -417,7 +725,7 @@ IceProxy::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double 
         {
             __delBase = __getDelegate(false);
             ::IceDelegate::Demo::insA* __del = dynamic_cast< ::IceDelegate::Demo::insA*>(__delBase.get());
-            __del->initWorker(proxy, startTime, step, __ctx, __observer);
+            __del->initEvent(proxy, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -432,12 +740,63 @@ IceProxy::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double 
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::insA::begin_initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::insA::begin_initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__initWorker_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__initEvent_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__insA__initWorker_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__insA__initEvent_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::insA::end_initEvent(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__insA__initEvent_name);
+}
+
+void
+IceProxy::Demo::insA::initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__initTime_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::insA* __del = dynamic_cast< ::IceDelegate::Demo::insA*>(__delBase.get());
+            __del->initTime(proxy, startTime, step, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::insA::begin_initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__initTime_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__insA__initTime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(proxy);
         __os->write(startTime);
@@ -453,60 +812,9 @@ IceProxy::Demo::insA::begin_initWorker(const ::Demo::managerPrx& proxy, ::Ice::D
 }
 
 void
-IceProxy::Demo::insA::end_initWorker(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::insA::end_initTime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__insA__initWorker_name);
-}
-
-void
-IceProxy::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx)
-{
-    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__HANDLEevOrder_name, __ctx);
-    int __cnt = 0;
-    while(true)
-    {
-        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
-        try
-        {
-            __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::insA* __del = dynamic_cast< ::IceDelegate::Demo::insA*>(__delBase.get());
-            __del->HANDLEevOrder(currentTime, __ctx, __observer);
-            return;
-        }
-        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
-        {
-            __handleExceptionWrapper(__delBase, __ex, __observer);
-        }
-        catch(const ::Ice::LocalException& __ex)
-        {
-            __handleException(__delBase, __ex, true, __cnt, __observer);
-        }
-    }
-}
-
-::Ice::AsyncResultPtr
-IceProxy::Demo::insA::begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
-{
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__HANDLEevOrder_name, __del, __cookie);
-    try
-    {
-        __result->__prepare(__Demo__insA__HANDLEevOrder_name, ::Ice::Normal, __ctx);
-        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
-        __os->write(currentTime);
-        __result->__endWriteParams();
-        __result->__send(true);
-    }
-    catch(const ::Ice::LocalException& __ex)
-    {
-        __result->__exceptionAsync(__ex);
-    }
-    return __result;
-}
-
-void
-IceProxy::Demo::insA::end_HANDLEevOrder(const ::Ice::AsyncResultPtr& __result)
-{
-    __end(__result, __Demo__insA__HANDLEevOrder_name);
+    __end(__result, __Demo__insA__initTime_name);
 }
 
 void
@@ -558,6 +866,57 @@ void
 IceProxy::Demo::insA::end_HANDLEevent(const ::Ice::AsyncResultPtr& __result)
 {
     __end(__result, __Demo__insA__HANDLEevent_name);
+}
+
+void
+IceProxy::Demo::insA::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__HANDLEtime_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::insA* __del = dynamic_cast< ::IceDelegate::Demo::insA*>(__delBase.get());
+            __del->HANDLEtime(currentTime, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::insA::begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__HANDLEtime_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__insA__HANDLEtime_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(currentTime);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::insA::end_HANDLEtime(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__insA__HANDLEtime_name);
 }
 
 void
@@ -651,9 +1010,9 @@ void
 }
 
 void
-IceProxy::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx)
+IceProxy::Demo::insB::initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__initWorker_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__initEvent_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -662,7 +1021,7 @@ IceProxy::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double 
         {
             __delBase = __getDelegate(false);
             ::IceDelegate::Demo::insB* __del = dynamic_cast< ::IceDelegate::Demo::insB*>(__delBase.get());
-            __del->initWorker(proxy, startTime, step, __ctx, __observer);
+            __del->initEvent(proxy, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -677,12 +1036,63 @@ IceProxy::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double 
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::insB::begin_initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::insB::begin_initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__initWorker_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__initEvent_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__insB__initWorker_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__insB__initEvent_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::insB::end_initEvent(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__insB__initEvent_name);
+}
+
+void
+IceProxy::Demo::insB::initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__initTime_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::insB* __del = dynamic_cast< ::IceDelegate::Demo::insB*>(__delBase.get());
+            __del->initTime(proxy, startTime, step, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::insB::begin_initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__initTime_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__insB__initTime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(proxy);
         __os->write(startTime);
@@ -698,60 +1108,9 @@ IceProxy::Demo::insB::begin_initWorker(const ::Demo::managerPrx& proxy, ::Ice::D
 }
 
 void
-IceProxy::Demo::insB::end_initWorker(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::insB::end_initTime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__insB__initWorker_name);
-}
-
-void
-IceProxy::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx)
-{
-    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__HANDLEevOrder_name, __ctx);
-    int __cnt = 0;
-    while(true)
-    {
-        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
-        try
-        {
-            __delBase = __getDelegate(false);
-            ::IceDelegate::Demo::insB* __del = dynamic_cast< ::IceDelegate::Demo::insB*>(__delBase.get());
-            __del->HANDLEevOrder(currentTime, __ctx, __observer);
-            return;
-        }
-        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
-        {
-            __handleExceptionWrapper(__delBase, __ex, __observer);
-        }
-        catch(const ::Ice::LocalException& __ex)
-        {
-            __handleException(__delBase, __ex, true, __cnt, __observer);
-        }
-    }
-}
-
-::Ice::AsyncResultPtr
-IceProxy::Demo::insB::begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
-{
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__HANDLEevOrder_name, __del, __cookie);
-    try
-    {
-        __result->__prepare(__Demo__insB__HANDLEevOrder_name, ::Ice::Normal, __ctx);
-        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
-        __os->write(currentTime);
-        __result->__endWriteParams();
-        __result->__send(true);
-    }
-    catch(const ::Ice::LocalException& __ex)
-    {
-        __result->__exceptionAsync(__ex);
-    }
-    return __result;
-}
-
-void
-IceProxy::Demo::insB::end_HANDLEevOrder(const ::Ice::AsyncResultPtr& __result)
-{
-    __end(__result, __Demo__insB__HANDLEevOrder_name);
+    __end(__result, __Demo__insB__initTime_name);
 }
 
 void
@@ -803,6 +1162,57 @@ void
 IceProxy::Demo::insB::end_HANDLEevent(const ::Ice::AsyncResultPtr& __result)
 {
     __end(__result, __Demo__insB__HANDLEevent_name);
+}
+
+void
+IceProxy::Demo::insB::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx)
+{
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__HANDLEtime_name, __ctx);
+    int __cnt = 0;
+    while(true)
+    {
+        ::IceInternal::Handle< ::IceDelegate::Ice::Object> __delBase;
+        try
+        {
+            __delBase = __getDelegate(false);
+            ::IceDelegate::Demo::insB* __del = dynamic_cast< ::IceDelegate::Demo::insB*>(__delBase.get());
+            __del->HANDLEtime(currentTime, __ctx, __observer);
+            return;
+        }
+        catch(const ::IceInternal::LocalExceptionWrapper& __ex)
+        {
+            __handleExceptionWrapper(__delBase, __ex, __observer);
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            __handleException(__delBase, __ex, true, __cnt, __observer);
+        }
+    }
+}
+
+::Ice::AsyncResultPtr
+IceProxy::Demo::insB::begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+{
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__HANDLEtime_name, __del, __cookie);
+    try
+    {
+        __result->__prepare(__Demo__insB__HANDLEtime_name, ::Ice::Normal, __ctx);
+        ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
+        __os->write(currentTime);
+        __result->__endWriteParams();
+        __result->__send(true);
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __result->__exceptionAsync(__ex);
+    }
+    return __result;
+}
+
+void
+IceProxy::Demo::insB::end_HANDLEtime(const ::Ice::AsyncResultPtr& __result)
+{
+    __end(__result, __Demo__insB__HANDLEtime_name);
 }
 
 void
@@ -879,9 +1289,9 @@ IceProxy::Demo::insB::__newInstance() const
 }
 
 void
-IceDelegateM::Demo::manager::initialList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::eventManager::initList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__manager__initialList_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__eventManager__initList_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
     bool __ok = __og.invoke();
     if(__og.hasResponse())
@@ -909,46 +1319,14 @@ IceDelegateM::Demo::manager::initialList(const ::Ice::Context* __context, ::IceI
     }
 }
 
-bool
-IceDelegateM::Demo::manager::checkList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
-{
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__manager__checkList_name, ::Ice::Normal, __context, __observer);
-    __og.writeEmptyParams();
-    bool __ok = __og.invoke();
-    bool __ret;
-    try
-    {
-        if(!__ok)
-        {
-            try
-            {
-                __og.throwUserException();
-            }
-            catch(const ::Ice::UserException& __ex)
-            {
-                ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
-                throw __uue;
-            }
-        }
-        ::IceInternal::BasicStream* __is = __og.startReadParams();
-        __is->read(__ret);
-        __og.endReadParams();
-        return __ret;
-    }
-    catch(const ::Ice::LocalException& __ex)
-    {
-        throw ::IceInternal::LocalExceptionWrapper(__ex, false);
-    }
-}
-
 void
-IceDelegateM::Demo::manager::confirmTime(const ::std::string& modelName, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::eventManager::initProxy(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__manager__confirmTime_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__eventManager__initProxy_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
-        __os->write(modelName);
+        __os->write(proxy);
         __og.endWriteParams();
     }
     catch(const ::Ice::LocalException& __ex)
@@ -982,9 +1360,9 @@ IceDelegateM::Demo::manager::confirmTime(const ::std::string& modelName, const :
 }
 
 void
-IceDelegateM::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::eventManager::SENDevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__manager__HANDLEevent_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__eventManager__SENDevent_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -1022,9 +1400,9 @@ IceDelegateM::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::C
 }
 
 void
-IceDelegateM::Demo::manager::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::eventManager::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__manager__shutdown_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__eventManager__shutdown_name, ::Ice::Normal, __context, __observer);
     __og.writeEmptyParams();
     bool __ok = __og.invoke();
     if(__og.hasResponse())
@@ -1053,9 +1431,40 @@ IceDelegateM::Demo::manager::shutdown(const ::Ice::Context* __context, ::IceInte
 }
 
 void
-IceDelegateM::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::timeManager::initList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__initWorker_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__initList_name, ::Ice::Normal, __context, __observer);
+    __og.writeEmptyParams();
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::timeManager::initProxy(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__initProxy_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -1094,14 +1503,199 @@ IceDelegateM::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Dou
     }
 }
 
-void
-IceDelegateM::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+bool
+IceDelegateM::Demo::timeManager::checkList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__HANDLEevOrder_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__checkList_name, ::Ice::Normal, __context, __observer);
+    __og.writeEmptyParams();
+    bool __ok = __og.invoke();
+    bool __ret;
+    try
+    {
+        if(!__ok)
+        {
+            try
+            {
+                __og.throwUserException();
+            }
+            catch(const ::Ice::UserException& __ex)
+            {
+                ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                throw __uue;
+            }
+        }
+        ::IceInternal::BasicStream* __is = __og.startReadParams();
+        __is->read(__ret);
+        __og.endReadParams();
+        return __ret;
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+    }
+}
+
+void
+IceDelegateM::Demo::timeManager::confirmTime(const ::std::string& modelName, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__confirmTime_name, ::Ice::Normal, __context, __observer);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(modelName);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::timeManager::SENDtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__SENDtime_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
         __os->write(currentTime);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::timeManager::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__shutdown_name, ::Ice::Normal, __context, __observer);
+    __og.writeEmptyParams();
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::insA::initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__initEvent_name, ::Ice::Normal, __context, __observer);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::insA::initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__initTime_name, ::Ice::Normal, __context, __observer);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __os->write(startTime);
+        __os->write(step);
         __og.endWriteParams();
     }
     catch(const ::Ice::LocalException& __ex)
@@ -1175,46 +1769,13 @@ IceDelegateM::Demo::insA::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
-IceDelegateM::Demo::insA::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::insA::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__shutdown_name, ::Ice::Normal, __context, __observer);
-    __og.writeEmptyParams();
-    bool __ok = __og.invoke();
-    if(__og.hasResponse())
-    {
-        try
-        {
-            if(!__ok)
-            {
-                try
-                {
-                    __og.throwUserException();
-                }
-                catch(const ::Ice::UserException& __ex)
-                {
-                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
-                    throw __uue;
-                }
-            }
-            __og.readEmptyParams();
-        }
-        catch(const ::Ice::LocalException& __ex)
-        {
-            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
-        }
-    }
-}
-
-void
-IceDelegateM::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
-{
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__initWorker_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__HANDLEtime_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
-        __os->write(proxy);
-        __os->write(startTime);
-        __os->write(step);
+        __os->write(currentTime);
         __og.endWriteParams();
     }
     catch(const ::Ice::LocalException& __ex)
@@ -1248,13 +1809,86 @@ IceDelegateM::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Dou
 }
 
 void
-IceDelegateM::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::insA::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__HANDLEevOrder_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__shutdown_name, ::Ice::Normal, __context, __observer);
+    __og.writeEmptyParams();
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::insB::initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__initEvent_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
-        __os->write(currentTime);
+        __os->write(proxy);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
+IceDelegateM::Demo::insB::initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__initTime_name, ::Ice::Normal, __context, __observer);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(proxy);
+        __os->write(startTime);
+        __os->write(step);
         __og.endWriteParams();
     }
     catch(const ::Ice::LocalException& __ex)
@@ -1328,6 +1962,46 @@ IceDelegateM::Demo::insB::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
+IceDelegateM::Demo::insB::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+{
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__HANDLEtime_name, ::Ice::Normal, __context, __observer);
+    try
+    {
+        ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
+        __os->write(currentTime);
+        __og.endWriteParams();
+    }
+    catch(const ::Ice::LocalException& __ex)
+    {
+        __og.abort(__ex);
+    }
+    bool __ok = __og.invoke();
+    if(__og.hasResponse())
+    {
+        try
+        {
+            if(!__ok)
+            {
+                try
+                {
+                    __og.throwUserException();
+                }
+                catch(const ::Ice::UserException& __ex)
+                {
+                    ::Ice::UnknownUserException __uue(__FILE__, __LINE__, __ex.ice_name());
+                    throw __uue;
+                }
+            }
+            __og.readEmptyParams();
+        }
+        catch(const ::Ice::LocalException& __ex)
+        {
+            throw ::IceInternal::LocalExceptionWrapper(__ex, false);
+        }
+    }
+}
+
+void
 IceDelegateM::Demo::insB::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
     ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__shutdown_name, ::Ice::Normal, __context, __observer);
@@ -1359,7 +2033,7 @@ IceDelegateM::Demo::insB::shutdown(const ::Ice::Context* __context, ::IceInterna
 }
 
 void
-IceDelegateD::Demo::manager::initialList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::eventManager::initList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -1373,12 +2047,12 @@ IceDelegateD::Demo::manager::initialList(const ::Ice::Context* __context, ::IceI
         virtual ::Ice::DispatchStatus
         run(::Ice::Object* object)
         {
-            ::Demo::manager* servant = dynamic_cast< ::Demo::manager*>(object);
+            ::Demo::eventManager* servant = dynamic_cast< ::Demo::eventManager*>(object);
             if(!servant)
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->initialList(_current);
+            servant->initList(_current);
             return ::Ice::DispatchOK;
         }
         
@@ -1387,7 +2061,7 @@ IceDelegateD::Demo::manager::initialList(const ::Ice::Context* __context, ::IceI
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__manager__initialList_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__eventManager__initList_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(__current);
@@ -1420,8 +2094,328 @@ IceDelegateD::Demo::manager::initialList(const ::Ice::Context* __context, ::IceI
     }
 }
 
+void
+IceDelegateD::Demo::eventManager::initProxy(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(const ::Demo::eventManagerPrx& __p_proxy, const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current),
+            _m_proxy(__p_proxy)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::eventManager* servant = dynamic_cast< ::Demo::eventManager*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->initProxy(_m_proxy, _current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+        const ::Demo::eventManagerPrx& _m_proxy;
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__eventManager__initProxy_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(proxy, __current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
+void
+IceDelegateD::Demo::eventManager::SENDevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(const ::Demo::event& __p_ev, const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current),
+            _m_ev(__p_ev)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::eventManager* servant = dynamic_cast< ::Demo::eventManager*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->SENDevent(_m_ev, _current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+        const ::Demo::event& _m_ev;
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__eventManager__SENDevent_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(ev, __current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
+void
+IceDelegateD::Demo::eventManager::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::eventManager* servant = dynamic_cast< ::Demo::eventManager*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->shutdown(_current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__eventManager__shutdown_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(__current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
+void
+IceDelegateD::Demo::timeManager::initList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::timeManager* servant = dynamic_cast< ::Demo::timeManager*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->initList(_current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__timeManager__initList_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(__current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
+void
+IceDelegateD::Demo::timeManager::initProxy(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(const ::Demo::timeManagerPrx& __p_proxy, ::Ice::Double __p_startTime, ::Ice::Double __p_step, const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current),
+            _m_proxy(__p_proxy),
+            _m_startTime(__p_startTime),
+            _m_step(__p_step)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::timeManager* servant = dynamic_cast< ::Demo::timeManager*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->initProxy(_m_proxy, _m_startTime, _m_step, _current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+        const ::Demo::timeManagerPrx& _m_proxy;
+        ::Ice::Double _m_startTime;
+        ::Ice::Double _m_step;
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__timeManager__initProxy_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(proxy, startTime, step, __current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
 bool
-IceDelegateD::Demo::manager::checkList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::timeManager::checkList(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -1436,7 +2430,7 @@ IceDelegateD::Demo::manager::checkList(const ::Ice::Context* __context, ::IceInt
         virtual ::Ice::DispatchStatus
         run(::Ice::Object* object)
         {
-            ::Demo::manager* servant = dynamic_cast< ::Demo::manager*>(object);
+            ::Demo::timeManager* servant = dynamic_cast< ::Demo::timeManager*>(object);
             if(!servant)
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
@@ -1451,7 +2445,7 @@ IceDelegateD::Demo::manager::checkList(const ::Ice::Context* __context, ::IceInt
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__manager__checkList_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__timeManager__checkList_name, ::Ice::Normal, __context);
     bool __result;
     try
     {
@@ -1487,7 +2481,7 @@ IceDelegateD::Demo::manager::checkList(const ::Ice::Context* __context, ::IceInt
 }
 
 void
-IceDelegateD::Demo::manager::confirmTime(const ::std::string& modelName, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::timeManager::confirmTime(const ::std::string& modelName, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -1502,7 +2496,7 @@ IceDelegateD::Demo::manager::confirmTime(const ::std::string& modelName, const :
         virtual ::Ice::DispatchStatus
         run(::Ice::Object* object)
         {
-            ::Demo::manager* servant = dynamic_cast< ::Demo::manager*>(object);
+            ::Demo::timeManager* servant = dynamic_cast< ::Demo::timeManager*>(object);
             if(!servant)
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
@@ -1517,7 +2511,7 @@ IceDelegateD::Demo::manager::confirmTime(const ::std::string& modelName, const :
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__manager__confirmTime_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__timeManager__confirmTime_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(modelName, __current);
@@ -1551,40 +2545,40 @@ IceDelegateD::Demo::manager::confirmTime(const ::std::string& modelName, const :
 }
 
 void
-IceDelegateD::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::timeManager::SENDtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(const ::Demo::event& __p_ev, const ::Ice::Current& __current) : 
+        _DirectI(::Ice::Double __p_currentTime, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
-            _m_ev(__p_ev)
+            _m_currentTime(__p_currentTime)
         {
         }
         
         virtual ::Ice::DispatchStatus
         run(::Ice::Object* object)
         {
-            ::Demo::manager* servant = dynamic_cast< ::Demo::manager*>(object);
+            ::Demo::timeManager* servant = dynamic_cast< ::Demo::timeManager*>(object);
             if(!servant)
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->HANDLEevent(_m_ev, _current);
+            servant->SENDtime(_m_currentTime, _current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        const ::Demo::event& _m_ev;
+        ::Ice::Double _m_currentTime;
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__manager__HANDLEevent_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__timeManager__SENDtime_name, ::Ice::Normal, __context);
     try
     {
-        _DirectI __direct(ev, __current);
+        _DirectI __direct(currentTime, __current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -1615,7 +2609,7 @@ IceDelegateD::Demo::manager::HANDLEevent(const ::Demo::event& ev, const ::Ice::C
 }
 
 void
-IceDelegateD::Demo::manager::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::timeManager::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -1629,7 +2623,7 @@ IceDelegateD::Demo::manager::shutdown(const ::Ice::Context* __context, ::IceInte
         virtual ::Ice::DispatchStatus
         run(::Ice::Object* object)
         {
-            ::Demo::manager* servant = dynamic_cast< ::Demo::manager*>(object);
+            ::Demo::timeManager* servant = dynamic_cast< ::Demo::timeManager*>(object);
             if(!servant)
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
@@ -1643,7 +2637,7 @@ IceDelegateD::Demo::manager::shutdown(const ::Ice::Context* __context, ::IceInte
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__manager__shutdown_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__timeManager__shutdown_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(__current);
@@ -1677,17 +2671,15 @@ IceDelegateD::Demo::manager::shutdown(const ::Ice::Context* __context, ::IceInte
 }
 
 void
-IceDelegateD::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::insA::initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(const ::Demo::managerPrx& __p_proxy, ::Ice::Double __p_startTime, ::Ice::Double __p_step, const ::Ice::Current& __current) : 
+        _DirectI(const ::Demo::eventManagerPrx& __p_proxy, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
-            _m_proxy(__p_proxy),
-            _m_startTime(__p_startTime),
-            _m_step(__p_step)
+            _m_proxy(__p_proxy)
         {
         }
         
@@ -1699,22 +2691,20 @@ IceDelegateD::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Dou
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->initWorker(_m_proxy, _m_startTime, _m_step, _current);
+            servant->initEvent(_m_proxy, _current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        const ::Demo::managerPrx& _m_proxy;
-        ::Ice::Double _m_startTime;
-        ::Ice::Double _m_step;
+        const ::Demo::eventManagerPrx& _m_proxy;
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__insA__initWorker_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__insA__initEvent_name, ::Ice::Normal, __context);
     try
     {
-        _DirectI __direct(proxy, startTime, step, __current);
+        _DirectI __direct(proxy, __current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -1745,15 +2735,17 @@ IceDelegateD::Demo::insA::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Dou
 }
 
 void
-IceDelegateD::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::insA::initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(::Ice::Double __p_currentTime, const ::Ice::Current& __current) : 
+        _DirectI(const ::Demo::timeManagerPrx& __p_proxy, ::Ice::Double __p_startTime, ::Ice::Double __p_step, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
-            _m_currentTime(__p_currentTime)
+            _m_proxy(__p_proxy),
+            _m_startTime(__p_startTime),
+            _m_step(__p_step)
         {
         }
         
@@ -1765,20 +2757,22 @@ IceDelegateD::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->HANDLEevOrder(_m_currentTime, _current);
+            servant->initTime(_m_proxy, _m_startTime, _m_step, _current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        ::Ice::Double _m_currentTime;
+        const ::Demo::timeManagerPrx& _m_proxy;
+        ::Ice::Double _m_startTime;
+        ::Ice::Double _m_step;
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__insA__HANDLEevOrder_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__insA__initTime_name, ::Ice::Normal, __context);
     try
     {
-        _DirectI __direct(currentTime, __current);
+        _DirectI __direct(proxy, startTime, step, __current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -1873,6 +2867,70 @@ IceDelegateD::Demo::insA::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
+IceDelegateD::Demo::insA::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(::Ice::Double __p_currentTime, const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current),
+            _m_currentTime(__p_currentTime)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::insA* servant = dynamic_cast< ::Demo::insA*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->HANDLEtime(_m_currentTime, _current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+        ::Ice::Double _m_currentTime;
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__insA__HANDLEtime_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(currentTime, __current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
+void
 IceDelegateD::Demo::insA::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
@@ -1935,17 +2993,15 @@ IceDelegateD::Demo::insA::shutdown(const ::Ice::Context* __context, ::IceInterna
 }
 
 void
-IceDelegateD::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::insB::initEvent(const ::Demo::eventManagerPrx& proxy, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(const ::Demo::managerPrx& __p_proxy, ::Ice::Double __p_startTime, ::Ice::Double __p_step, const ::Ice::Current& __current) : 
+        _DirectI(const ::Demo::eventManagerPrx& __p_proxy, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
-            _m_proxy(__p_proxy),
-            _m_startTime(__p_startTime),
-            _m_step(__p_step)
+            _m_proxy(__p_proxy)
         {
         }
         
@@ -1957,22 +3013,20 @@ IceDelegateD::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Dou
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->initWorker(_m_proxy, _m_startTime, _m_step, _current);
+            servant->initEvent(_m_proxy, _current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        const ::Demo::managerPrx& _m_proxy;
-        ::Ice::Double _m_startTime;
-        ::Ice::Double _m_step;
+        const ::Demo::eventManagerPrx& _m_proxy;
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__insB__initWorker_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__insB__initEvent_name, ::Ice::Normal, __context);
     try
     {
-        _DirectI __direct(proxy, startTime, step, __current);
+        _DirectI __direct(proxy, __current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -2003,15 +3057,17 @@ IceDelegateD::Demo::insB::initWorker(const ::Demo::managerPrx& proxy, ::Ice::Dou
 }
 
 void
-IceDelegateD::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::insB::initTime(const ::Demo::timeManagerPrx& proxy, ::Ice::Double startTime, ::Ice::Double step, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
     public:
 
-        _DirectI(::Ice::Double __p_currentTime, const ::Ice::Current& __current) : 
+        _DirectI(const ::Demo::timeManagerPrx& __p_proxy, ::Ice::Double __p_startTime, ::Ice::Double __p_step, const ::Ice::Current& __current) : 
             ::IceInternal::Direct(__current),
-            _m_currentTime(__p_currentTime)
+            _m_proxy(__p_proxy),
+            _m_startTime(__p_startTime),
+            _m_step(__p_step)
         {
         }
         
@@ -2023,20 +3079,22 @@ IceDelegateD::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->HANDLEevOrder(_m_currentTime, _current);
+            servant->initTime(_m_proxy, _m_startTime, _m_step, _current);
             return ::Ice::DispatchOK;
         }
         
     private:
         
-        ::Ice::Double _m_currentTime;
+        const ::Demo::timeManagerPrx& _m_proxy;
+        ::Ice::Double _m_startTime;
+        ::Ice::Double _m_step;
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__insB__HANDLEevOrder_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__insB__initTime_name, ::Ice::Normal, __context);
     try
     {
-        _DirectI __direct(currentTime, __current);
+        _DirectI __direct(proxy, startTime, step, __current);
         try
         {
             __direct.getServant()->__collocDispatch(__direct);
@@ -2131,6 +3189,70 @@ IceDelegateD::Demo::insB::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
+IceDelegateD::Demo::insB::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+{
+    class _DirectI : public ::IceInternal::Direct
+    {
+    public:
+
+        _DirectI(::Ice::Double __p_currentTime, const ::Ice::Current& __current) : 
+            ::IceInternal::Direct(__current),
+            _m_currentTime(__p_currentTime)
+        {
+        }
+        
+        virtual ::Ice::DispatchStatus
+        run(::Ice::Object* object)
+        {
+            ::Demo::insB* servant = dynamic_cast< ::Demo::insB*>(object);
+            if(!servant)
+            {
+                throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
+            }
+            servant->HANDLEtime(_m_currentTime, _current);
+            return ::Ice::DispatchOK;
+        }
+        
+    private:
+        
+        ::Ice::Double _m_currentTime;
+    };
+    
+    ::Ice::Current __current;
+    __initCurrent(__current, __Demo__insB__HANDLEtime_name, ::Ice::Normal, __context);
+    try
+    {
+        _DirectI __direct(currentTime, __current);
+        try
+        {
+            __direct.getServant()->__collocDispatch(__direct);
+        }
+        catch(...)
+        {
+            __direct.destroy();
+            throw;
+        }
+        __direct.destroy();
+    }
+    catch(const ::Ice::SystemException&)
+    {
+        throw;
+    }
+    catch(const ::IceInternal::LocalExceptionWrapper&)
+    {
+        throw;
+    }
+    catch(const ::std::exception& __ex)
+    {
+        ::IceInternal::LocalExceptionWrapper::throwWrapper(__ex);
+    }
+    catch(...)
+    {
+        throw ::IceInternal::LocalExceptionWrapper(::Ice::UnknownException(__FILE__, __LINE__, "unknown c++ exception"), false);
+    }
+}
+
+void
 IceDelegateD::Demo::insB::shutdown(const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
@@ -2192,54 +3314,242 @@ IceDelegateD::Demo::insB::shutdown(const ::Ice::Context* __context, ::IceInterna
     }
 }
 
-::Ice::Object* Demo::upCast(::Demo::manager* p) { return p; }
+::Ice::Object* Demo::upCast(::Demo::eventManager* p) { return p; }
 
 namespace
 {
-const ::std::string __Demo__manager_ids[2] =
+const ::std::string __Demo__eventManager_ids[2] =
 {
-    "::Demo::manager",
+    "::Demo::eventManager",
     "::Ice::Object"
 };
 
 }
 
 bool
-Demo::manager::ice_isA(const ::std::string& _s, const ::Ice::Current&) const
+Demo::eventManager::ice_isA(const ::std::string& _s, const ::Ice::Current&) const
 {
-    return ::std::binary_search(__Demo__manager_ids, __Demo__manager_ids + 2, _s);
+    return ::std::binary_search(__Demo__eventManager_ids, __Demo__eventManager_ids + 2, _s);
 }
 
 ::std::vector< ::std::string>
-Demo::manager::ice_ids(const ::Ice::Current&) const
+Demo::eventManager::ice_ids(const ::Ice::Current&) const
 {
-    return ::std::vector< ::std::string>(&__Demo__manager_ids[0], &__Demo__manager_ids[2]);
+    return ::std::vector< ::std::string>(&__Demo__eventManager_ids[0], &__Demo__eventManager_ids[2]);
 }
 
 const ::std::string&
-Demo::manager::ice_id(const ::Ice::Current&) const
+Demo::eventManager::ice_id(const ::Ice::Current&) const
 {
-    return __Demo__manager_ids[0];
+    return __Demo__eventManager_ids[0];
 }
 
 const ::std::string&
-Demo::manager::ice_staticId()
+Demo::eventManager::ice_staticId()
 {
-    return __Demo__manager_ids[0];
+    return __Demo__eventManager_ids[0];
 }
 
 ::Ice::DispatchStatus
-Demo::manager::___initialList(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::eventManager::___initList(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
-    initialList(__current);
+    initList(__current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
 
 ::Ice::DispatchStatus
-Demo::manager::___checkList(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::eventManager::___initProxy(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Demo::eventManagerPrx proxy;
+    __is->read(proxy);
+    __inS.endReadParams();
+    initProxy(proxy, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+Demo::eventManager::___SENDevent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Demo::event ev;
+    __is->read(ev);
+    __inS.endReadParams();
+    SENDevent(ev, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+Demo::eventManager::___shutdown(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    __inS.readEmptyParams();
+    shutdown(__current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+namespace
+{
+const ::std::string __Demo__eventManager_all[] =
+{
+    "SENDevent",
+    "ice_id",
+    "ice_ids",
+    "ice_isA",
+    "ice_ping",
+    "initList",
+    "initProxy",
+    "shutdown"
+};
+
+}
+
+::Ice::DispatchStatus
+Demo::eventManager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
+{
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__eventManager_all, __Demo__eventManager_all + 8, current.operation);
+    if(r.first == r.second)
+    {
+        throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
+    }
+
+    switch(r.first - __Demo__eventManager_all)
+    {
+        case 0:
+        {
+            return ___SENDevent(in, current);
+        }
+        case 1:
+        {
+            return ___ice_id(in, current);
+        }
+        case 2:
+        {
+            return ___ice_ids(in, current);
+        }
+        case 3:
+        {
+            return ___ice_isA(in, current);
+        }
+        case 4:
+        {
+            return ___ice_ping(in, current);
+        }
+        case 5:
+        {
+            return ___initList(in, current);
+        }
+        case 6:
+        {
+            return ___initProxy(in, current);
+        }
+        case 7:
+        {
+            return ___shutdown(in, current);
+        }
+    }
+
+    assert(false);
+    throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
+}
+
+void
+Demo::eventManager::__writeImpl(::IceInternal::BasicStream* __os) const
+{
+    __os->startWriteSlice(ice_staticId(), -1, true);
+    __os->endWriteSlice();
+}
+
+void
+Demo::eventManager::__readImpl(::IceInternal::BasicStream* __is)
+{
+    __is->startReadSlice();
+    __is->endReadSlice();
+}
+
+void 
+Demo::__patch(eventManagerPtr& handle, const ::Ice::ObjectPtr& v)
+{
+    handle = ::Demo::eventManagerPtr::dynamicCast(v);
+    if(v && !handle)
+    {
+        IceInternal::Ex::throwUOE(::Demo::eventManager::ice_staticId(), v);
+    }
+}
+
+::Ice::Object* Demo::upCast(::Demo::timeManager* p) { return p; }
+
+namespace
+{
+const ::std::string __Demo__timeManager_ids[2] =
+{
+    "::Demo::timeManager",
+    "::Ice::Object"
+};
+
+}
+
+bool
+Demo::timeManager::ice_isA(const ::std::string& _s, const ::Ice::Current&) const
+{
+    return ::std::binary_search(__Demo__timeManager_ids, __Demo__timeManager_ids + 2, _s);
+}
+
+::std::vector< ::std::string>
+Demo::timeManager::ice_ids(const ::Ice::Current&) const
+{
+    return ::std::vector< ::std::string>(&__Demo__timeManager_ids[0], &__Demo__timeManager_ids[2]);
+}
+
+const ::std::string&
+Demo::timeManager::ice_id(const ::Ice::Current&) const
+{
+    return __Demo__timeManager_ids[0];
+}
+
+const ::std::string&
+Demo::timeManager::ice_staticId()
+{
+    return __Demo__timeManager_ids[0];
+}
+
+::Ice::DispatchStatus
+Demo::timeManager::___initList(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    __inS.readEmptyParams();
+    initList(__current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+Demo::timeManager::___initProxy(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Demo::timeManagerPrx proxy;
+    ::Ice::Double startTime;
+    ::Ice::Double step;
+    __is->read(proxy);
+    __is->read(startTime);
+    __is->read(step);
+    __inS.endReadParams();
+    initProxy(proxy, startTime, step, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+Demo::timeManager::___checkList(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
@@ -2251,7 +3561,7 @@ Demo::manager::___checkList(::IceInternal::Incoming& __inS, const ::Ice::Current
 }
 
 ::Ice::DispatchStatus
-Demo::manager::___confirmTime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::timeManager::___confirmTime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
@@ -2264,20 +3574,20 @@ Demo::manager::___confirmTime(::IceInternal::Incoming& __inS, const ::Ice::Curre
 }
 
 ::Ice::DispatchStatus
-Demo::manager::___HANDLEevent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::timeManager::___SENDtime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::Demo::event ev;
-    __is->read(ev);
+    ::Ice::Double currentTime;
+    __is->read(currentTime);
     __inS.endReadParams();
-    HANDLEevent(ev, __current);
+    SENDtime(currentTime, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
 
 ::Ice::DispatchStatus
-Demo::manager::___shutdown(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::timeManager::___shutdown(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     __inS.readEmptyParams();
@@ -2288,35 +3598,36 @@ Demo::manager::___shutdown(::IceInternal::Incoming& __inS, const ::Ice::Current&
 
 namespace
 {
-const ::std::string __Demo__manager_all[] =
+const ::std::string __Demo__timeManager_all[] =
 {
-    "HANDLEevent",
+    "SENDtime",
     "checkList",
     "confirmTime",
     "ice_id",
     "ice_ids",
     "ice_isA",
     "ice_ping",
-    "initialList",
+    "initList",
+    "initProxy",
     "shutdown"
 };
 
 }
 
 ::Ice::DispatchStatus
-Demo::manager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
+Demo::timeManager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
 {
-    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__manager_all, __Demo__manager_all + 9, current.operation);
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__timeManager_all, __Demo__timeManager_all + 10, current.operation);
     if(r.first == r.second)
     {
         throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
     }
 
-    switch(r.first - __Demo__manager_all)
+    switch(r.first - __Demo__timeManager_all)
     {
         case 0:
         {
-            return ___HANDLEevent(in, current);
+            return ___SENDtime(in, current);
         }
         case 1:
         {
@@ -2344,9 +3655,13 @@ Demo::manager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& cur
         }
         case 7:
         {
-            return ___initialList(in, current);
+            return ___initList(in, current);
         }
         case 8:
+        {
+            return ___initProxy(in, current);
+        }
+        case 9:
         {
             return ___shutdown(in, current);
         }
@@ -2357,26 +3672,26 @@ Demo::manager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& cur
 }
 
 void
-Demo::manager::__writeImpl(::IceInternal::BasicStream* __os) const
+Demo::timeManager::__writeImpl(::IceInternal::BasicStream* __os) const
 {
     __os->startWriteSlice(ice_staticId(), -1, true);
     __os->endWriteSlice();
 }
 
 void
-Demo::manager::__readImpl(::IceInternal::BasicStream* __is)
+Demo::timeManager::__readImpl(::IceInternal::BasicStream* __is)
 {
     __is->startReadSlice();
     __is->endReadSlice();
 }
 
 void 
-Demo::__patch(managerPtr& handle, const ::Ice::ObjectPtr& v)
+Demo::__patch(timeManagerPtr& handle, const ::Ice::ObjectPtr& v)
 {
-    handle = ::Demo::managerPtr::dynamicCast(v);
+    handle = ::Demo::timeManagerPtr::dynamicCast(v);
     if(v && !handle)
     {
-        IceInternal::Ex::throwUOE(::Demo::manager::ice_staticId(), v);
+        IceInternal::Ex::throwUOE(::Demo::timeManager::ice_staticId(), v);
     }
 }
 
@@ -2417,31 +3732,31 @@ Demo::insA::ice_staticId()
 }
 
 ::Ice::DispatchStatus
-Demo::insA::___initWorker(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::insA::___initEvent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::Demo::managerPrx proxy;
+    ::Demo::eventManagerPrx proxy;
+    __is->read(proxy);
+    __inS.endReadParams();
+    initEvent(proxy, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+Demo::insA::___initTime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Demo::timeManagerPrx proxy;
     ::Ice::Double startTime;
     ::Ice::Double step;
     __is->read(proxy);
     __is->read(startTime);
     __is->read(step);
     __inS.endReadParams();
-    initWorker(proxy, startTime, step, __current);
-    __inS.__writeEmptyParams();
-    return ::Ice::DispatchOK;
-}
-
-::Ice::DispatchStatus
-Demo::insA::___HANDLEevOrder(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
-{
-    __checkMode(::Ice::Normal, __current.mode);
-    ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::Ice::Double currentTime;
-    __is->read(currentTime);
-    __inS.endReadParams();
-    HANDLEevOrder(currentTime, __current);
+    initTime(proxy, startTime, step, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
@@ -2460,6 +3775,19 @@ Demo::insA::___HANDLEevent(::IceInternal::Incoming& __inS, const ::Ice::Current&
 }
 
 ::Ice::DispatchStatus
+Demo::insA::___HANDLEtime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Ice::Double currentTime;
+    __is->read(currentTime);
+    __inS.endReadParams();
+    HANDLEtime(currentTime, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
 Demo::insA::___shutdown(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
@@ -2473,13 +3801,14 @@ namespace
 {
 const ::std::string __Demo__insA_all[] =
 {
-    "HANDLEevOrder",
     "HANDLEevent",
+    "HANDLEtime",
     "ice_id",
     "ice_ids",
     "ice_isA",
     "ice_ping",
-    "initWorker",
+    "initEvent",
+    "initTime",
     "shutdown"
 };
 
@@ -2488,7 +3817,7 @@ const ::std::string __Demo__insA_all[] =
 ::Ice::DispatchStatus
 Demo::insA::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
 {
-    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__insA_all, __Demo__insA_all + 8, current.operation);
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__insA_all, __Demo__insA_all + 9, current.operation);
     if(r.first == r.second)
     {
         throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
@@ -2498,11 +3827,11 @@ Demo::insA::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& curren
     {
         case 0:
         {
-            return ___HANDLEevOrder(in, current);
+            return ___HANDLEevent(in, current);
         }
         case 1:
         {
-            return ___HANDLEevent(in, current);
+            return ___HANDLEtime(in, current);
         }
         case 2:
         {
@@ -2522,9 +3851,13 @@ Demo::insA::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& curren
         }
         case 6:
         {
-            return ___initWorker(in, current);
+            return ___initEvent(in, current);
         }
         case 7:
+        {
+            return ___initTime(in, current);
+        }
+        case 8:
         {
             return ___shutdown(in, current);
         }
@@ -2595,31 +3928,31 @@ Demo::insB::ice_staticId()
 }
 
 ::Ice::DispatchStatus
-Demo::insB::___initWorker(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::insB::___initEvent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::Demo::managerPrx proxy;
+    ::Demo::eventManagerPrx proxy;
+    __is->read(proxy);
+    __inS.endReadParams();
+    initEvent(proxy, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
+Demo::insB::___initTime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Demo::timeManagerPrx proxy;
     ::Ice::Double startTime;
     ::Ice::Double step;
     __is->read(proxy);
     __is->read(startTime);
     __is->read(step);
     __inS.endReadParams();
-    initWorker(proxy, startTime, step, __current);
-    __inS.__writeEmptyParams();
-    return ::Ice::DispatchOK;
-}
-
-::Ice::DispatchStatus
-Demo::insB::___HANDLEevOrder(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
-{
-    __checkMode(::Ice::Normal, __current.mode);
-    ::IceInternal::BasicStream* __is = __inS.startReadParams();
-    ::Ice::Double currentTime;
-    __is->read(currentTime);
-    __inS.endReadParams();
-    HANDLEevOrder(currentTime, __current);
+    initTime(proxy, startTime, step, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
@@ -2638,6 +3971,19 @@ Demo::insB::___HANDLEevent(::IceInternal::Incoming& __inS, const ::Ice::Current&
 }
 
 ::Ice::DispatchStatus
+Demo::insB::___HANDLEtime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+{
+    __checkMode(::Ice::Normal, __current.mode);
+    ::IceInternal::BasicStream* __is = __inS.startReadParams();
+    ::Ice::Double currentTime;
+    __is->read(currentTime);
+    __inS.endReadParams();
+    HANDLEtime(currentTime, __current);
+    __inS.__writeEmptyParams();
+    return ::Ice::DispatchOK;
+}
+
+::Ice::DispatchStatus
 Demo::insB::___shutdown(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
@@ -2651,13 +3997,14 @@ namespace
 {
 const ::std::string __Demo__insB_all[] =
 {
-    "HANDLEevOrder",
     "HANDLEevent",
+    "HANDLEtime",
     "ice_id",
     "ice_ids",
     "ice_isA",
     "ice_ping",
-    "initWorker",
+    "initEvent",
+    "initTime",
     "shutdown"
 };
 
@@ -2666,7 +4013,7 @@ const ::std::string __Demo__insB_all[] =
 ::Ice::DispatchStatus
 Demo::insB::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& current)
 {
-    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__insB_all, __Demo__insB_all + 8, current.operation);
+    ::std::pair< const ::std::string*, const ::std::string*> r = ::std::equal_range(__Demo__insB_all, __Demo__insB_all + 9, current.operation);
     if(r.first == r.second)
     {
         throw ::Ice::OperationNotExistException(__FILE__, __LINE__, current.id, current.facet, current.operation);
@@ -2676,11 +4023,11 @@ Demo::insB::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& curren
     {
         case 0:
         {
-            return ___HANDLEevOrder(in, current);
+            return ___HANDLEevent(in, current);
         }
         case 1:
         {
-            return ___HANDLEevent(in, current);
+            return ___HANDLEtime(in, current);
         }
         case 2:
         {
@@ -2700,9 +4047,13 @@ Demo::insB::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& curren
         }
         case 6:
         {
-            return ___initWorker(in, current);
+            return ___initEvent(in, current);
         }
         case 7:
+        {
+            return ___initTime(in, current);
+        }
+        case 8:
         {
             return ___shutdown(in, current);
         }

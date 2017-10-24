@@ -15,7 +15,7 @@ struct event {string name;double time;seqString seqStr;seqInteger seqInt;seqPoin
 	interface eventManager {
 		void initList();
 		void initProxy(eventManager* proxy);
-		void HANDLEevent(event ev);
+		void SENDevent(event ev);
 		void shutdown();
 	};
 
@@ -24,7 +24,7 @@ struct event {string name;double time;seqString seqStr;seqInteger seqInt;seqPoin
 		void initProxy(timeManager* proxy, double startTime, double step);
 		bool checkList();
 		void confirmTime(string modelName);
-		void SENDevOrder(double currentTime);
+		void SENDtime(double currentTime);
 		void shutdown();
 	};
 
@@ -32,7 +32,7 @@ struct event {string name;double time;seqString seqStr;seqInteger seqInt;seqPoin
 		void initEvent(eventManager* proxy);
 		void initTime(timeManager* proxy, double startTime, double step);
 		void HANDLEevent(event ev);
-		void HANDLEevOrder(double currentTime);
+		void HANDLEtime(double currentTime);
 		void shutdown();
 	};
 
@@ -40,7 +40,7 @@ struct event {string name;double time;seqString seqStr;seqInteger seqInt;seqPoin
 		void initEvent(eventManager* proxy);
 		void initTime(timeManager* proxy, double startTime, double step);
 		void HANDLEevent(event ev);
-		void HANDLEevOrder(double currentTime);
+		void HANDLEtime(double currentTime);
 		void shutdown();
 	};
 

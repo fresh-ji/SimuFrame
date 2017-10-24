@@ -44,7 +44,7 @@ const ::std::string __Demo__eventManager__initList_name = "initList";
 
 const ::std::string __Demo__eventManager__initProxy_name = "initProxy";
 
-const ::std::string __Demo__eventManager__HANDLEevent_name = "HANDLEevent";
+const ::std::string __Demo__eventManager__SENDevent_name = "SENDevent";
 
 const ::std::string __Demo__eventManager__shutdown_name = "shutdown";
 
@@ -56,7 +56,7 @@ const ::std::string __Demo__timeManager__checkList_name = "checkList";
 
 const ::std::string __Demo__timeManager__confirmTime_name = "confirmTime";
 
-const ::std::string __Demo__timeManager__SENDevOrder_name = "SENDevOrder";
+const ::std::string __Demo__timeManager__SENDtime_name = "SENDtime";
 
 const ::std::string __Demo__timeManager__shutdown_name = "shutdown";
 
@@ -66,7 +66,7 @@ const ::std::string __Demo__insA__initTime_name = "initTime";
 
 const ::std::string __Demo__insA__HANDLEevent_name = "HANDLEevent";
 
-const ::std::string __Demo__insA__HANDLEevOrder_name = "HANDLEevOrder";
+const ::std::string __Demo__insA__HANDLEtime_name = "HANDLEtime";
 
 const ::std::string __Demo__insA__shutdown_name = "shutdown";
 
@@ -76,7 +76,7 @@ const ::std::string __Demo__insB__initTime_name = "initTime";
 
 const ::std::string __Demo__insB__HANDLEevent_name = "HANDLEevent";
 
-const ::std::string __Demo__insB__HANDLEevOrder_name = "HANDLEevOrder";
+const ::std::string __Demo__insB__HANDLEtime_name = "HANDLEtime";
 
 const ::std::string __Demo__insB__shutdown_name = "shutdown";
 
@@ -204,9 +204,9 @@ IceProxy::Demo::eventManager::end_initProxy(const ::Ice::AsyncResultPtr& __resul
 }
 
 void
-IceProxy::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __ctx)
+IceProxy::Demo::eventManager::SENDevent(const ::Demo::event& ev, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__eventManager__HANDLEevent_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__eventManager__SENDevent_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -215,7 +215,7 @@ IceProxy::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::Ice::
         {
             __delBase = __getDelegate(false);
             ::IceDelegate::Demo::eventManager* __del = dynamic_cast< ::IceDelegate::Demo::eventManager*>(__delBase.get());
-            __del->HANDLEevent(ev, __ctx, __observer);
+            __del->SENDevent(ev, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -230,12 +230,12 @@ IceProxy::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::Ice::
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::eventManager::begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::eventManager::begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__eventManager__HANDLEevent_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__eventManager__SENDevent_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__eventManager__HANDLEevent_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__eventManager__SENDevent_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(ev);
         __result->__endWriteParams();
@@ -249,9 +249,9 @@ IceProxy::Demo::eventManager::begin_HANDLEevent(const ::Demo::event& ev, const :
 }
 
 void
-IceProxy::Demo::eventManager::end_HANDLEevent(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::eventManager::end_SENDevent(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__eventManager__HANDLEevent_name);
+    __end(__result, __Demo__eventManager__SENDevent_name);
 }
 
 void
@@ -573,9 +573,9 @@ IceProxy::Demo::timeManager::end_confirmTime(const ::Ice::AsyncResultPtr& __resu
 }
 
 void
-IceProxy::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx)
+IceProxy::Demo::timeManager::SENDtime(::Ice::Double currentTime, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__SENDevOrder_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__timeManager__SENDtime_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -584,7 +584,7 @@ IceProxy::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::Ice:
         {
             __delBase = __getDelegate(false);
             ::IceDelegate::Demo::timeManager* __del = dynamic_cast< ::IceDelegate::Demo::timeManager*>(__delBase.get());
-            __del->SENDevOrder(currentTime, __ctx, __observer);
+            __del->SENDtime(currentTime, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -599,12 +599,12 @@ IceProxy::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::Ice:
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::timeManager::begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::timeManager::begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__SENDevOrder_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__timeManager__SENDtime_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__timeManager__SENDevOrder_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__timeManager__SENDtime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(currentTime);
         __result->__endWriteParams();
@@ -618,9 +618,9 @@ IceProxy::Demo::timeManager::begin_SENDevOrder(::Ice::Double currentTime, const 
 }
 
 void
-IceProxy::Demo::timeManager::end_SENDevOrder(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::timeManager::end_SENDtime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__timeManager__SENDevOrder_name);
+    __end(__result, __Demo__timeManager__SENDtime_name);
 }
 
 void
@@ -869,9 +869,9 @@ IceProxy::Demo::insA::end_HANDLEevent(const ::Ice::AsyncResultPtr& __result)
 }
 
 void
-IceProxy::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx)
+IceProxy::Demo::insA::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__HANDLEevOrder_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insA__HANDLEtime_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -880,7 +880,7 @@ IceProxy::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Cont
         {
             __delBase = __getDelegate(false);
             ::IceDelegate::Demo::insA* __del = dynamic_cast< ::IceDelegate::Demo::insA*>(__delBase.get());
-            __del->HANDLEevOrder(currentTime, __ctx, __observer);
+            __del->HANDLEtime(currentTime, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -895,12 +895,12 @@ IceProxy::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Cont
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::insA::begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::insA::begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__HANDLEevOrder_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insA__HANDLEtime_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__insA__HANDLEevOrder_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__insA__HANDLEtime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(currentTime);
         __result->__endWriteParams();
@@ -914,9 +914,9 @@ IceProxy::Demo::insA::begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice
 }
 
 void
-IceProxy::Demo::insA::end_HANDLEevOrder(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::insA::end_HANDLEtime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__insA__HANDLEevOrder_name);
+    __end(__result, __Demo__insA__HANDLEtime_name);
 }
 
 void
@@ -1165,9 +1165,9 @@ IceProxy::Demo::insB::end_HANDLEevent(const ::Ice::AsyncResultPtr& __result)
 }
 
 void
-IceProxy::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx)
+IceProxy::Demo::insB::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx)
 {
-    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__HANDLEevOrder_name, __ctx);
+    ::IceInternal::InvocationObserver __observer(this, __Demo__insB__HANDLEtime_name, __ctx);
     int __cnt = 0;
     while(true)
     {
@@ -1176,7 +1176,7 @@ IceProxy::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Cont
         {
             __delBase = __getDelegate(false);
             ::IceDelegate::Demo::insB* __del = dynamic_cast< ::IceDelegate::Demo::insB*>(__delBase.get());
-            __del->HANDLEevOrder(currentTime, __ctx, __observer);
+            __del->HANDLEtime(currentTime, __ctx, __observer);
             return;
         }
         catch(const ::IceInternal::LocalExceptionWrapper& __ex)
@@ -1191,12 +1191,12 @@ IceProxy::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Cont
 }
 
 ::Ice::AsyncResultPtr
-IceProxy::Demo::insB::begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
+IceProxy::Demo::insB::begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __ctx, const ::IceInternal::CallbackBasePtr& __del, const ::Ice::LocalObjectPtr& __cookie)
 {
-    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__HANDLEevOrder_name, __del, __cookie);
+    ::IceInternal::OutgoingAsyncPtr __result = new ::IceInternal::OutgoingAsync(this, __Demo__insB__HANDLEtime_name, __del, __cookie);
     try
     {
-        __result->__prepare(__Demo__insB__HANDLEevOrder_name, ::Ice::Normal, __ctx);
+        __result->__prepare(__Demo__insB__HANDLEtime_name, ::Ice::Normal, __ctx);
         ::IceInternal::BasicStream* __os = __result->__startWriteParams(::Ice::DefaultFormat);
         __os->write(currentTime);
         __result->__endWriteParams();
@@ -1210,9 +1210,9 @@ IceProxy::Demo::insB::begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice
 }
 
 void
-IceProxy::Demo::insB::end_HANDLEevOrder(const ::Ice::AsyncResultPtr& __result)
+IceProxy::Demo::insB::end_HANDLEtime(const ::Ice::AsyncResultPtr& __result)
 {
-    __end(__result, __Demo__insB__HANDLEevOrder_name);
+    __end(__result, __Demo__insB__HANDLEtime_name);
 }
 
 void
@@ -1360,9 +1360,9 @@ IceDelegateM::Demo::eventManager::initProxy(const ::Demo::eventManagerPrx& proxy
 }
 
 void
-IceDelegateM::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::eventManager::SENDevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__eventManager__HANDLEevent_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__eventManager__SENDevent_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -1576,9 +1576,9 @@ IceDelegateM::Demo::timeManager::confirmTime(const ::std::string& modelName, con
 }
 
 void
-IceDelegateM::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::timeManager::SENDtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__SENDevOrder_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__timeManager__SENDtime_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -1769,9 +1769,9 @@ IceDelegateM::Demo::insA::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
-IceDelegateM::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::insA::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__HANDLEevOrder_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insA__HANDLEtime_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -1962,9 +1962,9 @@ IceDelegateM::Demo::insB::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
-IceDelegateM::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
+IceDelegateM::Demo::insB::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver& __observer)
 {
-    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__HANDLEevOrder_name, ::Ice::Normal, __context, __observer);
+    ::IceInternal::Outgoing __og(__handler.get(), __Demo__insB__HANDLEtime_name, ::Ice::Normal, __context, __observer);
     try
     {
         ::IceInternal::BasicStream* __os = __og.startWriteParams(::Ice::DefaultFormat);
@@ -2159,7 +2159,7 @@ IceDelegateD::Demo::eventManager::initProxy(const ::Demo::eventManagerPrx& proxy
 }
 
 void
-IceDelegateD::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::eventManager::SENDevent(const ::Demo::event& ev, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -2179,7 +2179,7 @@ IceDelegateD::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::I
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->HANDLEevent(_m_ev, _current);
+            servant->SENDevent(_m_ev, _current);
             return ::Ice::DispatchOK;
         }
         
@@ -2189,7 +2189,7 @@ IceDelegateD::Demo::eventManager::HANDLEevent(const ::Demo::event& ev, const ::I
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__eventManager__HANDLEevent_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__eventManager__SENDevent_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(ev, __current);
@@ -2545,7 +2545,7 @@ IceDelegateD::Demo::timeManager::confirmTime(const ::std::string& modelName, con
 }
 
 void
-IceDelegateD::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::timeManager::SENDtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -2565,7 +2565,7 @@ IceDelegateD::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->SENDevOrder(_m_currentTime, _current);
+            servant->SENDtime(_m_currentTime, _current);
             return ::Ice::DispatchOK;
         }
         
@@ -2575,7 +2575,7 @@ IceDelegateD::Demo::timeManager::SENDevOrder(::Ice::Double currentTime, const ::
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__timeManager__SENDevOrder_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__timeManager__SENDtime_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(currentTime, __current);
@@ -2867,7 +2867,7 @@ IceDelegateD::Demo::insA::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
-IceDelegateD::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::insA::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -2887,7 +2887,7 @@ IceDelegateD::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->HANDLEevOrder(_m_currentTime, _current);
+            servant->HANDLEtime(_m_currentTime, _current);
             return ::Ice::DispatchOK;
         }
         
@@ -2897,7 +2897,7 @@ IceDelegateD::Demo::insA::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__insA__HANDLEevOrder_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__insA__HANDLEtime_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(currentTime, __current);
@@ -3189,7 +3189,7 @@ IceDelegateD::Demo::insB::HANDLEevent(const ::Demo::event& ev, const ::Ice::Cont
 }
 
 void
-IceDelegateD::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
+IceDelegateD::Demo::insB::HANDLEtime(::Ice::Double currentTime, const ::Ice::Context* __context, ::IceInternal::InvocationObserver&)
 {
     class _DirectI : public ::IceInternal::Direct
     {
@@ -3209,7 +3209,7 @@ IceDelegateD::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::
             {
                 throw ::Ice::OperationNotExistException(__FILE__, __LINE__, _current.id, _current.facet, _current.operation);
             }
-            servant->HANDLEevOrder(_m_currentTime, _current);
+            servant->HANDLEtime(_m_currentTime, _current);
             return ::Ice::DispatchOK;
         }
         
@@ -3219,7 +3219,7 @@ IceDelegateD::Demo::insB::HANDLEevOrder(::Ice::Double currentTime, const ::Ice::
     };
     
     ::Ice::Current __current;
-    __initCurrent(__current, __Demo__insB__HANDLEevOrder_name, ::Ice::Normal, __context);
+    __initCurrent(__current, __Demo__insB__HANDLEtime_name, ::Ice::Normal, __context);
     try
     {
         _DirectI __direct(currentTime, __current);
@@ -3374,14 +3374,14 @@ Demo::eventManager::___initProxy(::IceInternal::Incoming& __inS, const ::Ice::Cu
 }
 
 ::Ice::DispatchStatus
-Demo::eventManager::___HANDLEevent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::eventManager::___SENDevent(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
     ::Demo::event ev;
     __is->read(ev);
     __inS.endReadParams();
-    HANDLEevent(ev, __current);
+    SENDevent(ev, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
@@ -3400,7 +3400,7 @@ namespace
 {
 const ::std::string __Demo__eventManager_all[] =
 {
-    "HANDLEevent",
+    "SENDevent",
     "ice_id",
     "ice_ids",
     "ice_isA",
@@ -3425,7 +3425,7 @@ Demo::eventManager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current
     {
         case 0:
         {
-            return ___HANDLEevent(in, current);
+            return ___SENDevent(in, current);
         }
         case 1:
         {
@@ -3574,14 +3574,14 @@ Demo::timeManager::___confirmTime(::IceInternal::Incoming& __inS, const ::Ice::C
 }
 
 ::Ice::DispatchStatus
-Demo::timeManager::___SENDevOrder(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::timeManager::___SENDtime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
     ::Ice::Double currentTime;
     __is->read(currentTime);
     __inS.endReadParams();
-    SENDevOrder(currentTime, __current);
+    SENDtime(currentTime, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
@@ -3600,7 +3600,7 @@ namespace
 {
 const ::std::string __Demo__timeManager_all[] =
 {
-    "SENDevOrder",
+    "SENDtime",
     "checkList",
     "confirmTime",
     "ice_id",
@@ -3627,7 +3627,7 @@ Demo::timeManager::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current&
     {
         case 0:
         {
-            return ___SENDevOrder(in, current);
+            return ___SENDtime(in, current);
         }
         case 1:
         {
@@ -3775,14 +3775,14 @@ Demo::insA::___HANDLEevent(::IceInternal::Incoming& __inS, const ::Ice::Current&
 }
 
 ::Ice::DispatchStatus
-Demo::insA::___HANDLEevOrder(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::insA::___HANDLEtime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
     ::Ice::Double currentTime;
     __is->read(currentTime);
     __inS.endReadParams();
-    HANDLEevOrder(currentTime, __current);
+    HANDLEtime(currentTime, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
@@ -3801,8 +3801,8 @@ namespace
 {
 const ::std::string __Demo__insA_all[] =
 {
-    "HANDLEevOrder",
     "HANDLEevent",
+    "HANDLEtime",
     "ice_id",
     "ice_ids",
     "ice_isA",
@@ -3827,11 +3827,11 @@ Demo::insA::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& curren
     {
         case 0:
         {
-            return ___HANDLEevOrder(in, current);
+            return ___HANDLEevent(in, current);
         }
         case 1:
         {
-            return ___HANDLEevent(in, current);
+            return ___HANDLEtime(in, current);
         }
         case 2:
         {
@@ -3971,14 +3971,14 @@ Demo::insB::___HANDLEevent(::IceInternal::Incoming& __inS, const ::Ice::Current&
 }
 
 ::Ice::DispatchStatus
-Demo::insB::___HANDLEevOrder(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
+Demo::insB::___HANDLEtime(::IceInternal::Incoming& __inS, const ::Ice::Current& __current)
 {
     __checkMode(::Ice::Normal, __current.mode);
     ::IceInternal::BasicStream* __is = __inS.startReadParams();
     ::Ice::Double currentTime;
     __is->read(currentTime);
     __inS.endReadParams();
-    HANDLEevOrder(currentTime, __current);
+    HANDLEtime(currentTime, __current);
     __inS.__writeEmptyParams();
     return ::Ice::DispatchOK;
 }
@@ -3997,8 +3997,8 @@ namespace
 {
 const ::std::string __Demo__insB_all[] =
 {
-    "HANDLEevOrder",
     "HANDLEevent",
+    "HANDLEtime",
     "ice_id",
     "ice_ids",
     "ice_isA",
@@ -4023,11 +4023,11 @@ Demo::insB::__dispatch(::IceInternal::Incoming& in, const ::Ice::Current& curren
     {
         case 0:
         {
-            return ___HANDLEevOrder(in, current);
+            return ___HANDLEevent(in, current);
         }
         case 1:
         {
-            return ___HANDLEevent(in, current);
+            return ___HANDLEtime(in, current);
         }
         case 2:
         {

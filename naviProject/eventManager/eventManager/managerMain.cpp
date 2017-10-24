@@ -25,6 +25,8 @@ int main(int argc, char* argv[]) {
 		eventManagerPrx proxy = eventManagerPrx::uncheckedCast(Adapter->createProxy(ic->stringToIdentity("sentinel")));
 		Ptr->initProxy(proxy);
 
+		cout << "Event Manager is Ready!!!" << endl;
+
 		ic->waitForShutdown();
 	} catch (const Ice::Exception& ex) {
 		cerr << ex << endl;

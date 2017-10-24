@@ -216,8 +216,8 @@ typedef ::IceUtil::Handle< Callback_eventManager_initList_Base> Callback_eventMa
 class Callback_eventManager_initProxy_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_eventManager_initProxy_Base> Callback_eventManager_initProxyPtr;
 
-class Callback_eventManager_HANDLEevent_Base : virtual public ::IceInternal::CallbackBase { };
-typedef ::IceUtil::Handle< Callback_eventManager_HANDLEevent_Base> Callback_eventManager_HANDLEeventPtr;
+class Callback_eventManager_SENDevent_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_eventManager_SENDevent_Base> Callback_eventManager_SENDeventPtr;
 
 class Callback_eventManager_shutdown_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_eventManager_shutdown_Base> Callback_eventManager_shutdownPtr;
@@ -234,8 +234,8 @@ typedef ::IceUtil::Handle< Callback_timeManager_checkList_Base> Callback_timeMan
 class Callback_timeManager_confirmTime_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_timeManager_confirmTime_Base> Callback_timeManager_confirmTimePtr;
 
-class Callback_timeManager_SENDevOrder_Base : virtual public ::IceInternal::CallbackBase { };
-typedef ::IceUtil::Handle< Callback_timeManager_SENDevOrder_Base> Callback_timeManager_SENDevOrderPtr;
+class Callback_timeManager_SENDtime_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_timeManager_SENDtime_Base> Callback_timeManager_SENDtimePtr;
 
 class Callback_timeManager_shutdown_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_timeManager_shutdown_Base> Callback_timeManager_shutdownPtr;
@@ -249,8 +249,8 @@ typedef ::IceUtil::Handle< Callback_insA_initTime_Base> Callback_insA_initTimePt
 class Callback_insA_HANDLEevent_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_insA_HANDLEevent_Base> Callback_insA_HANDLEeventPtr;
 
-class Callback_insA_HANDLEevOrder_Base : virtual public ::IceInternal::CallbackBase { };
-typedef ::IceUtil::Handle< Callback_insA_HANDLEevOrder_Base> Callback_insA_HANDLEevOrderPtr;
+class Callback_insA_HANDLEtime_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_insA_HANDLEtime_Base> Callback_insA_HANDLEtimePtr;
 
 class Callback_insA_shutdown_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_insA_shutdown_Base> Callback_insA_shutdownPtr;
@@ -264,8 +264,8 @@ typedef ::IceUtil::Handle< Callback_insB_initTime_Base> Callback_insB_initTimePt
 class Callback_insB_HANDLEevent_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_insB_HANDLEevent_Base> Callback_insB_HANDLEeventPtr;
 
-class Callback_insB_HANDLEevOrder_Base : virtual public ::IceInternal::CallbackBase { };
-typedef ::IceUtil::Handle< Callback_insB_HANDLEevOrder_Base> Callback_insB_HANDLEevOrderPtr;
+class Callback_insB_HANDLEtime_Base : virtual public ::IceInternal::CallbackBase { };
+typedef ::IceUtil::Handle< Callback_insB_HANDLEtime_Base> Callback_insB_HANDLEtimePtr;
 
 class Callback_insB_shutdown_Base : virtual public ::IceInternal::CallbackBase { };
 typedef ::IceUtil::Handle< Callback_insB_shutdown_Base> Callback_insB_shutdownPtr;
@@ -422,73 +422,73 @@ private:
     
 public:
 
-    void HANDLEevent(const ::Demo::event& ev)
+    void SENDevent(const ::Demo::event& ev)
     {
-        HANDLEevent(ev, 0);
+        SENDevent(ev, 0);
     }
-    void HANDLEevent(const ::Demo::event& ev, const ::Ice::Context& __ctx)
+    void SENDevent(const ::Demo::event& ev, const ::Ice::Context& __ctx)
     {
-        HANDLEevent(ev, &__ctx);
+        SENDevent(ev, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_HANDLEevent(const ::Demo::event& ev, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_SENDevent(const ::Demo::event& ev, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_HANDLEevent(ev, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+        return begin_SENDevent(ev, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevent(const ::Demo::event& ev, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_SENDevent(const ::Demo::event& ev, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_HANDLEevent(ev, 0, ::Ice::newCallback(__completed, __sent), 0);
+        return begin_SENDevent(ev, 0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_HANDLEevent(ev, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+        return begin_SENDevent(ev, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_HANDLEevent(ev, &__ctx, ::Ice::newCallback(__completed, __sent));
+        return begin_SENDevent(ev, &__ctx, ::Ice::newCallback(__completed, __sent));
     }
 #endif
 
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event& ev)
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event& ev)
     {
-        return begin_HANDLEevent(ev, 0, ::IceInternal::__dummyCallback, 0);
+        return begin_SENDevent(ev, 0, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context& __ctx)
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context& __ctx)
     {
-        return begin_HANDLEevent(ev, &__ctx, ::IceInternal::__dummyCallback, 0);
+        return begin_SENDevent(ev, &__ctx, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event& ev, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevent(ev, 0, __del, __cookie);
+        return begin_SENDevent(ev, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevent(ev, &__ctx, __del, __cookie);
+        return begin_SENDevent(ev, &__ctx, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event& ev, const ::Demo::Callback_eventManager_HANDLEeventPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event& ev, const ::Demo::Callback_eventManager_SENDeventPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevent(ev, 0, __del, __cookie);
+        return begin_SENDevent(ev, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::Demo::Callback_eventManager_HANDLEeventPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event& ev, const ::Ice::Context& __ctx, const ::Demo::Callback_eventManager_SENDeventPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevent(ev, &__ctx, __del, __cookie);
+        return begin_SENDevent(ev, &__ctx, __del, __cookie);
     }
 
-    void end_HANDLEevent(const ::Ice::AsyncResultPtr&);
+    void end_SENDevent(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    void HANDLEevent(const ::Demo::event&, const ::Ice::Context*);
-    ::Ice::AsyncResultPtr begin_HANDLEevent(const ::Demo::event&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    void SENDevent(const ::Demo::event&, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_SENDevent(const ::Demo::event&, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
 
@@ -998,73 +998,73 @@ private:
     
 public:
 
-    void SENDevOrder(::Ice::Double currentTime)
+    void SENDtime(::Ice::Double currentTime)
     {
-        SENDevOrder(currentTime, 0);
+        SENDtime(currentTime, 0);
     }
-    void SENDevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx)
+    void SENDtime(::Ice::Double currentTime, const ::Ice::Context& __ctx)
     {
-        SENDevOrder(currentTime, &__ctx);
+        SENDtime(currentTime, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_SENDevOrder(::Ice::Double currentTime, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_SENDtime(::Ice::Double currentTime, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_SENDevOrder(currentTime, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+        return begin_SENDtime(currentTime, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
     }
     ::Ice::AsyncResultPtr
-    begin_SENDevOrder(::Ice::Double currentTime, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_SENDtime(::Ice::Double currentTime, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_SENDevOrder(currentTime, 0, ::Ice::newCallback(__completed, __sent), 0);
+        return begin_SENDtime(currentTime, 0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_SENDevOrder(currentTime, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+        return begin_SENDtime(currentTime, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_SENDevOrder(currentTime, &__ctx, ::Ice::newCallback(__completed, __sent));
+        return begin_SENDtime(currentTime, &__ctx, ::Ice::newCallback(__completed, __sent));
     }
 #endif
 
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double currentTime)
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double currentTime)
     {
-        return begin_SENDevOrder(currentTime, 0, ::IceInternal::__dummyCallback, 0);
+        return begin_SENDtime(currentTime, 0, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx)
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context& __ctx)
     {
-        return begin_SENDevOrder(currentTime, &__ctx, ::IceInternal::__dummyCallback, 0);
+        return begin_SENDtime(currentTime, &__ctx, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double currentTime, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_SENDevOrder(currentTime, 0, __del, __cookie);
+        return begin_SENDtime(currentTime, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_SENDevOrder(currentTime, &__ctx, __del, __cookie);
+        return begin_SENDtime(currentTime, &__ctx, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double currentTime, const ::Demo::Callback_timeManager_SENDevOrderPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double currentTime, const ::Demo::Callback_timeManager_SENDtimePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_SENDevOrder(currentTime, 0, __del, __cookie);
+        return begin_SENDtime(currentTime, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Demo::Callback_timeManager_SENDevOrderPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Demo::Callback_timeManager_SENDtimePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_SENDevOrder(currentTime, &__ctx, __del, __cookie);
+        return begin_SENDtime(currentTime, &__ctx, __del, __cookie);
     }
 
-    void end_SENDevOrder(const ::Ice::AsyncResultPtr&);
+    void end_SENDtime(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    void SENDevOrder(::Ice::Double, const ::Ice::Context*);
-    ::Ice::AsyncResultPtr begin_SENDevOrder(::Ice::Double, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    void SENDtime(::Ice::Double, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_SENDtime(::Ice::Double, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
 
@@ -1461,73 +1461,73 @@ private:
     
 public:
 
-    void HANDLEevOrder(::Ice::Double currentTime)
+    void HANDLEtime(::Ice::Double currentTime)
     {
-        HANDLEevOrder(currentTime, 0);
+        HANDLEtime(currentTime, 0);
     }
-    void HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx)
+    void HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx)
     {
-        HANDLEevOrder(currentTime, &__ctx);
+        HANDLEtime(currentTime, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_HANDLEevOrder(currentTime, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+        return begin_HANDLEtime(currentTime, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_HANDLEevOrder(currentTime, 0, ::Ice::newCallback(__completed, __sent), 0);
+        return begin_HANDLEtime(currentTime, 0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+        return begin_HANDLEtime(currentTime, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, ::Ice::newCallback(__completed, __sent));
+        return begin_HANDLEtime(currentTime, &__ctx, ::Ice::newCallback(__completed, __sent));
     }
 #endif
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime)
     {
-        return begin_HANDLEevOrder(currentTime, 0, ::IceInternal::__dummyCallback, 0);
+        return begin_HANDLEtime(currentTime, 0, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx)
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, ::IceInternal::__dummyCallback, 0);
+        return begin_HANDLEtime(currentTime, &__ctx, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, 0, __del, __cookie);
+        return begin_HANDLEtime(currentTime, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, __del, __cookie);
+        return begin_HANDLEtime(currentTime, &__ctx, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Demo::Callback_insA_HANDLEevOrderPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Demo::Callback_insA_HANDLEtimePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, 0, __del, __cookie);
+        return begin_HANDLEtime(currentTime, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Demo::Callback_insA_HANDLEevOrderPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Demo::Callback_insA_HANDLEtimePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, __del, __cookie);
+        return begin_HANDLEtime(currentTime, &__ctx, __del, __cookie);
     }
 
-    void end_HANDLEevOrder(const ::Ice::AsyncResultPtr&);
+    void end_HANDLEtime(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    void HANDLEevOrder(::Ice::Double, const ::Ice::Context*);
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    void HANDLEtime(::Ice::Double, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
 
@@ -1924,73 +1924,73 @@ private:
     
 public:
 
-    void HANDLEevOrder(::Ice::Double currentTime)
+    void HANDLEtime(::Ice::Double currentTime)
     {
-        HANDLEevOrder(currentTime, 0);
+        HANDLEtime(currentTime, 0);
     }
-    void HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx)
+    void HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx)
     {
-        HANDLEevOrder(currentTime, &__ctx);
+        HANDLEtime(currentTime, &__ctx);
     }
 #ifdef ICE_CPP11
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_HANDLEevOrder(currentTime, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
+        return begin_HANDLEtime(currentTime, 0, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent));
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_HANDLEevOrder(currentTime, 0, ::Ice::newCallback(__completed, __sent), 0);
+        return begin_HANDLEtime(currentTime, 0, ::Ice::newCallback(__completed, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void ()>& __response, const ::IceInternal::Function<void (const ::Ice::Exception&)>& __exception = ::IceInternal::Function<void (const ::Ice::Exception&)>(), const ::IceInternal::Function<void (bool)>& __sent = ::IceInternal::Function<void (bool)>())
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
+        return begin_HANDLEtime(currentTime, &__ctx, new ::IceInternal::Cpp11FnOnewayCallbackNC(__response, __exception, __sent), 0);
     }
     ::Ice::AsyncResultPtr
-    begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
+    begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __completed, const ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>& __sent = ::IceInternal::Function<void (const ::Ice::AsyncResultPtr&)>())
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, ::Ice::newCallback(__completed, __sent));
+        return begin_HANDLEtime(currentTime, &__ctx, ::Ice::newCallback(__completed, __sent));
     }
 #endif
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime)
     {
-        return begin_HANDLEevOrder(currentTime, 0, ::IceInternal::__dummyCallback, 0);
+        return begin_HANDLEtime(currentTime, 0, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx)
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, ::IceInternal::__dummyCallback, 0);
+        return begin_HANDLEtime(currentTime, &__ctx, ::IceInternal::__dummyCallback, 0);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, 0, __del, __cookie);
+        return begin_HANDLEtime(currentTime, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Ice::CallbackPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, __del, __cookie);
+        return begin_HANDLEtime(currentTime, &__ctx, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Demo::Callback_insB_HANDLEevOrderPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Demo::Callback_insB_HANDLEtimePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, 0, __del, __cookie);
+        return begin_HANDLEtime(currentTime, 0, __del, __cookie);
     }
 
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Demo::Callback_insB_HANDLEevOrderPtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double currentTime, const ::Ice::Context& __ctx, const ::Demo::Callback_insB_HANDLEtimePtr& __del, const ::Ice::LocalObjectPtr& __cookie = 0)
     {
-        return begin_HANDLEevOrder(currentTime, &__ctx, __del, __cookie);
+        return begin_HANDLEtime(currentTime, &__ctx, __del, __cookie);
     }
 
-    void end_HANDLEevOrder(const ::Ice::AsyncResultPtr&);
+    void end_HANDLEtime(const ::Ice::AsyncResultPtr&);
     
 private:
 
-    void HANDLEevOrder(::Ice::Double, const ::Ice::Context*);
-    ::Ice::AsyncResultPtr begin_HANDLEevOrder(::Ice::Double, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
+    void HANDLEtime(::Ice::Double, const ::Ice::Context*);
+    ::Ice::AsyncResultPtr begin_HANDLEtime(::Ice::Double, const ::Ice::Context*, const ::IceInternal::CallbackBasePtr&, const ::Ice::LocalObjectPtr& __cookie = 0);
     
 public:
 
@@ -2191,7 +2191,7 @@ public:
 
     virtual void initProxy(const ::Demo::eventManagerPrx&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void SENDevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
@@ -2208,7 +2208,7 @@ public:
 
     virtual void confirmTime(const ::std::string&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual void SENDevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void SENDtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
@@ -2223,7 +2223,7 @@ public:
 
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
@@ -2238,7 +2238,7 @@ public:
 
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&) = 0;
 };
@@ -2262,7 +2262,7 @@ public:
 
     virtual void initProxy(const ::Demo::eventManagerPrx&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void SENDevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2280,7 +2280,7 @@ public:
 
     virtual void confirmTime(const ::std::string&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void SENDevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void SENDtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2296,7 +2296,7 @@ public:
 
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2312,7 +2312,7 @@ public:
 
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2336,7 +2336,7 @@ public:
 
     virtual void initProxy(const ::Demo::eventManagerPrx&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void SENDevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2354,7 +2354,7 @@ public:
 
     virtual void confirmTime(const ::std::string&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void SENDevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void SENDtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2370,7 +2370,7 @@ public:
 
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2386,7 +2386,7 @@ public:
 
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 
     virtual void shutdown(const ::Ice::Context*, ::IceInternal::InvocationObserver&);
 };
@@ -2416,8 +2416,8 @@ public:
     virtual void initProxy(const ::Demo::eventManagerPrx&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___initProxy(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Current& = ::Ice::Current()) = 0;
-    ::Ice::DispatchStatus ___HANDLEevent(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void SENDevent(const ::Demo::event&, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___SENDevent(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual void shutdown(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___shutdown(::IceInternal::Incoming&, const ::Ice::Current&);
@@ -2467,8 +2467,8 @@ public:
     virtual void confirmTime(const ::std::string&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___confirmTime(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual void SENDevOrder(::Ice::Double, const ::Ice::Current& = ::Ice::Current()) = 0;
-    ::Ice::DispatchStatus ___SENDevOrder(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void SENDtime(::Ice::Double, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___SENDtime(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual void shutdown(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___shutdown(::IceInternal::Incoming&, const ::Ice::Current&);
@@ -2515,8 +2515,8 @@ public:
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___HANDLEevent(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Current& = ::Ice::Current()) = 0;
-    ::Ice::DispatchStatus ___HANDLEevOrder(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___HANDLEtime(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual void shutdown(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___shutdown(::IceInternal::Incoming&, const ::Ice::Current&);
@@ -2563,8 +2563,8 @@ public:
     virtual void HANDLEevent(const ::Demo::event&, const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___HANDLEevent(::IceInternal::Incoming&, const ::Ice::Current&);
 
-    virtual void HANDLEevOrder(::Ice::Double, const ::Ice::Current& = ::Ice::Current()) = 0;
-    ::Ice::DispatchStatus ___HANDLEevOrder(::IceInternal::Incoming&, const ::Ice::Current&);
+    virtual void HANDLEtime(::Ice::Double, const ::Ice::Current& = ::Ice::Current()) = 0;
+    ::Ice::DispatchStatus ___HANDLEtime(::IceInternal::Incoming&, const ::Ice::Current&);
 
     virtual void shutdown(const ::Ice::Current& = ::Ice::Current()) = 0;
     ::Ice::DispatchStatus ___shutdown(::IceInternal::Incoming&, const ::Ice::Current&);
@@ -2760,7 +2760,7 @@ newCallback_eventManager_initProxy(T* instance, void (T::*excb)(const ::Ice::Exc
 }
 
 template<class T>
-class CallbackNC_eventManager_HANDLEevent : public Callback_eventManager_HANDLEevent_Base, public ::IceInternal::OnewayCallbackNC<T>
+class CallbackNC_eventManager_SENDevent : public Callback_eventManager_SENDevent_Base, public ::IceInternal::OnewayCallbackNC<T>
 {
 public:
 
@@ -2770,38 +2770,38 @@ public:
     typedef void (T::*Sent)(bool);
     typedef void (T::*Response)();
 
-    CallbackNC_eventManager_HANDLEevent(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    CallbackNC_eventManager_SENDevent(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_eventManager_HANDLEevent<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_eventManager_SENDevent<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_eventManager_HANDLEevent<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_eventManager_SENDevent<T>(instance, 0, excb, sentcb);
 }
 
-template<class T> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_eventManager_HANDLEevent<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_eventManager_SENDevent<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_eventManager_HANDLEevent<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_eventManager_SENDevent<T>(instance, 0, excb, sentcb);
 }
 
 template<class T, typename CT>
-class Callback_eventManager_HANDLEevent : public Callback_eventManager_HANDLEevent_Base, public ::IceInternal::OnewayCallback<T, CT>
+class Callback_eventManager_SENDevent : public Callback_eventManager_SENDevent_Base, public ::IceInternal::OnewayCallback<T, CT>
 {
 public:
 
@@ -2811,34 +2811,34 @@ public:
     typedef void (T::*Sent)(bool , const CT&);
     typedef void (T::*Response)(const CT&);
 
-    Callback_eventManager_HANDLEevent(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    Callback_eventManager_SENDevent(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T, typename CT> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_eventManager_HANDLEevent<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_eventManager_SENDevent<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_eventManager_HANDLEevent<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_eventManager_SENDevent<T, CT>(instance, 0, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_eventManager_HANDLEevent<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_eventManager_SENDevent<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_eventManager_HANDLEeventPtr
-newCallback_eventManager_HANDLEevent(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_eventManager_SENDeventPtr
+newCallback_eventManager_SENDevent(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_eventManager_HANDLEevent<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_eventManager_SENDevent<T, CT>(instance, 0, excb, sentcb);
 }
 
 template<class T>
@@ -3270,7 +3270,7 @@ newCallback_timeManager_confirmTime(T* instance, void (T::*excb)(const ::Ice::Ex
 }
 
 template<class T>
-class CallbackNC_timeManager_SENDevOrder : public Callback_timeManager_SENDevOrder_Base, public ::IceInternal::OnewayCallbackNC<T>
+class CallbackNC_timeManager_SENDtime : public Callback_timeManager_SENDtime_Base, public ::IceInternal::OnewayCallbackNC<T>
 {
 public:
 
@@ -3280,38 +3280,38 @@ public:
     typedef void (T::*Sent)(bool);
     typedef void (T::*Response)();
 
-    CallbackNC_timeManager_SENDevOrder(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    CallbackNC_timeManager_SENDtime(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_timeManager_SENDevOrder<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_timeManager_SENDtime<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_timeManager_SENDevOrder<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_timeManager_SENDtime<T>(instance, 0, excb, sentcb);
 }
 
-template<class T> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_timeManager_SENDevOrder<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_timeManager_SENDtime<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_timeManager_SENDevOrder<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_timeManager_SENDtime<T>(instance, 0, excb, sentcb);
 }
 
 template<class T, typename CT>
-class Callback_timeManager_SENDevOrder : public Callback_timeManager_SENDevOrder_Base, public ::IceInternal::OnewayCallback<T, CT>
+class Callback_timeManager_SENDtime : public Callback_timeManager_SENDtime_Base, public ::IceInternal::OnewayCallback<T, CT>
 {
 public:
 
@@ -3321,34 +3321,34 @@ public:
     typedef void (T::*Sent)(bool , const CT&);
     typedef void (T::*Response)(const CT&);
 
-    Callback_timeManager_SENDevOrder(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    Callback_timeManager_SENDtime(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T, typename CT> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_timeManager_SENDevOrder<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_timeManager_SENDtime<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_timeManager_SENDevOrder<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_timeManager_SENDtime<T, CT>(instance, 0, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_timeManager_SENDevOrder<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_timeManager_SENDtime<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_timeManager_SENDevOrderPtr
-newCallback_timeManager_SENDevOrder(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_timeManager_SENDtimePtr
+newCallback_timeManager_SENDtime(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_timeManager_SENDevOrder<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_timeManager_SENDtime<T, CT>(instance, 0, excb, sentcb);
 }
 
 template<class T>
@@ -3680,7 +3680,7 @@ newCallback_insA_HANDLEevent(T* instance, void (T::*excb)(const ::Ice::Exception
 }
 
 template<class T>
-class CallbackNC_insA_HANDLEevOrder : public Callback_insA_HANDLEevOrder_Base, public ::IceInternal::OnewayCallbackNC<T>
+class CallbackNC_insA_HANDLEtime : public Callback_insA_HANDLEtime_Base, public ::IceInternal::OnewayCallbackNC<T>
 {
 public:
 
@@ -3690,38 +3690,38 @@ public:
     typedef void (T::*Sent)(bool);
     typedef void (T::*Response)();
 
-    CallbackNC_insA_HANDLEevOrder(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    CallbackNC_insA_HANDLEtime(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insA_HANDLEevOrder<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_insA_HANDLEtime<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insA_HANDLEevOrder<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_insA_HANDLEtime<T>(instance, 0, excb, sentcb);
 }
 
-template<class T> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insA_HANDLEevOrder<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_insA_HANDLEtime<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insA_HANDLEevOrder<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_insA_HANDLEtime<T>(instance, 0, excb, sentcb);
 }
 
 template<class T, typename CT>
-class Callback_insA_HANDLEevOrder : public Callback_insA_HANDLEevOrder_Base, public ::IceInternal::OnewayCallback<T, CT>
+class Callback_insA_HANDLEtime : public Callback_insA_HANDLEtime_Base, public ::IceInternal::OnewayCallback<T, CT>
 {
 public:
 
@@ -3731,34 +3731,34 @@ public:
     typedef void (T::*Sent)(bool , const CT&);
     typedef void (T::*Response)(const CT&);
 
-    Callback_insA_HANDLEevOrder(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    Callback_insA_HANDLEtime(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T, typename CT> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insA_HANDLEevOrder<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_insA_HANDLEtime<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insA_HANDLEevOrder<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_insA_HANDLEtime<T, CT>(instance, 0, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insA_HANDLEevOrder<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_insA_HANDLEtime<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_insA_HANDLEevOrderPtr
-newCallback_insA_HANDLEevOrder(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insA_HANDLEtimePtr
+newCallback_insA_HANDLEtime(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insA_HANDLEevOrder<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_insA_HANDLEtime<T, CT>(instance, 0, excb, sentcb);
 }
 
 template<class T>
@@ -4090,7 +4090,7 @@ newCallback_insB_HANDLEevent(T* instance, void (T::*excb)(const ::Ice::Exception
 }
 
 template<class T>
-class CallbackNC_insB_HANDLEevOrder : public Callback_insB_HANDLEevOrder_Base, public ::IceInternal::OnewayCallbackNC<T>
+class CallbackNC_insB_HANDLEtime : public Callback_insB_HANDLEtime_Base, public ::IceInternal::OnewayCallbackNC<T>
 {
 public:
 
@@ -4100,38 +4100,38 @@ public:
     typedef void (T::*Sent)(bool);
     typedef void (T::*Response)();
 
-    CallbackNC_insB_HANDLEevOrder(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    CallbackNC_insB_HANDLEtime(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallbackNC<T>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insB_HANDLEevOrder<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_insB_HANDLEtime<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insB_HANDLEevOrder<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_insB_HANDLEtime<T>(instance, 0, excb, sentcb);
 }
 
-template<class T> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(T* instance, void (T::*cb)(), void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insB_HANDLEevOrder<T>(instance, cb, excb, sentcb);
+    return new CallbackNC_insB_HANDLEtime<T>(instance, cb, excb, sentcb);
 }
 
-template<class T> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
+template<class T> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(T* instance, void (T::*excb)(const ::Ice::Exception&), void (T::*sentcb)(bool) = 0)
 {
-    return new CallbackNC_insB_HANDLEevOrder<T>(instance, 0, excb, sentcb);
+    return new CallbackNC_insB_HANDLEtime<T>(instance, 0, excb, sentcb);
 }
 
 template<class T, typename CT>
-class Callback_insB_HANDLEevOrder : public Callback_insB_HANDLEevOrder_Base, public ::IceInternal::OnewayCallback<T, CT>
+class Callback_insB_HANDLEtime : public Callback_insB_HANDLEtime_Base, public ::IceInternal::OnewayCallback<T, CT>
 {
 public:
 
@@ -4141,34 +4141,34 @@ public:
     typedef void (T::*Sent)(bool , const CT&);
     typedef void (T::*Response)(const CT&);
 
-    Callback_insB_HANDLEevOrder(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
+    Callback_insB_HANDLEtime(const TPtr& obj, Response cb, Exception excb, Sent sentcb)
         : ::IceInternal::OnewayCallback<T, CT>(obj, cb, excb, sentcb)
     {
     }
 };
 
-template<class T, typename CT> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insB_HANDLEevOrder<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_insB_HANDLEtime<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(const IceUtil::Handle<T>& instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insB_HANDLEevOrder<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_insB_HANDLEtime<T, CT>(instance, 0, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(T* instance, void (T::*cb)(const CT&), void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insB_HANDLEevOrder<T, CT>(instance, cb, excb, sentcb);
+    return new Callback_insB_HANDLEtime<T, CT>(instance, cb, excb, sentcb);
 }
 
-template<class T, typename CT> Callback_insB_HANDLEevOrderPtr
-newCallback_insB_HANDLEevOrder(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
+template<class T, typename CT> Callback_insB_HANDLEtimePtr
+newCallback_insB_HANDLEtime(T* instance, void (T::*excb)(const ::Ice::Exception&, const CT&), void (T::*sentcb)(bool, const CT&) = 0)
 {
-    return new Callback_insB_HANDLEevOrder<T, CT>(instance, 0, excb, sentcb);
+    return new Callback_insB_HANDLEtime<T, CT>(instance, 0, excb, sentcb);
 }
 
 template<class T>

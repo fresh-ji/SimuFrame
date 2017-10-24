@@ -1,19 +1,37 @@
-﻿生成启动时间为 2017/10/23 18:36:16。
+﻿生成启动时间为 2017/10/24 10:06:20。
      1>项目“C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\timeManager\timeManager.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug\timeManager.lastbuildstate”。
        InitializeBuildStatus:
-         正在对“Debug\timeManager.unsuccessfulbuild”执行 Touch 任务。
+         正在创建“Debug\timeManager.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\ZeroC\Ice-3.5.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt managerI.cpp managerMain.cpp sliceDef.cpp
          sliceDef.cpp
          managerMain.cpp
          managerI.cpp
-     1>c:\users\jihang\desktop\my\simuframe\naviproject\timemanager\timemanager\manageri.cpp(60): error C2511: “void timeManagerI::SENDevOrder(double,const Ice::Current)”:“timeManagerI”中没有找到重载的成员函数
-                 c:\users\jihang\desktop\my\simuframe\naviproject\timemanager\timemanager\manageri.h(16) : 参见“timeManagerI”的声明
          正在生成代码...
-     1>已完成生成项目“C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\timeManager\timeManager.vcxproj”(rebuild 个目标)的操作 - 失败。
+       ManifestResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\timeManager.exe.embed.manifest.res" Debug\timeManager_manifest.rc 
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\ZeroC\Ice-3.5.1\lib" iced.lib iceutild.lib icestormd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\timeManager.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.lib" /MACHINE:X86 Debug\timeManager.exe.embed.manifest.res
+         Debug\managerI.obj
+         Debug\managerMain.obj
+         Debug\sliceDef.obj
+       Manifest:
+         正在删除文件“Debug\timeManager.exe.embed.manifest”。
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\timeManager.exe.embed.manifest" /manifest Debug\timeManager.exe.intermediate.manifest
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\timeManager.exe.embed.manifest.res" Debug\timeManager_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\ZeroC\Ice-3.5.1\lib" iced.lib iceutild.lib icestormd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\timeManager.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.lib" /MACHINE:X86 Debug\timeManager.exe.embed.manifest.res
+         Debug\managerI.obj
+         Debug\managerMain.obj
+         Debug\sliceDef.obj
+         timeManager.vcxproj -> C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\Debug\timeManager.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\timeManager.unsuccessfulbuild”。
+         正在对“Debug\timeManager.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\timeManager\timeManager\timeManager.vcxproj”(rebuild 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:07.30
+已用时间 00:00:08.56

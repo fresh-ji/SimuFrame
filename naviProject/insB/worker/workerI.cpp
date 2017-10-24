@@ -1,4 +1,6 @@
+
 #include "workerI.h"
+
 using namespace std;
 using namespace Ice;
 using namespace Demo;
@@ -12,28 +14,19 @@ void insBI::shutdown(const Current& c) {
 	}
 }
 
-bool insBI::comp(event ev1, event ev2) {
-	return ev1.time < ev2.time;
+void insBI::initEvent(const eventManagerPrx& proxy, const Current& c) {
+	eventProxy = proxy;
+	cout << "Acquire Event Proxy!!!" << endl;
 }
 
-void insBI::publishEvent(event ev) {
-	int argc = 0;
-	char* argv[1];
-	ic1 = initialize(argc, argv);
-	ObjectPrx obj = ic1->stringToProxy("LVCIS/TopicManager:tcp -h 127.0.0.1 -p 12337");
-	IceStorm::TopicManagerPrx topicManger = IceStorm::TopicManagerPrx::checkedCast(obj);
-	IceStorm::TopicPrx topic = topicManger->retrieve(ev.name);
-	ObjectPrx pub = topic->getPublisher()->ice_oneway();
-	managerPrx Prx_manager = managerPrx::uncheckedCast(pub);
-	Prx_manager->HANDLEevent(ev);
-	ic1->destroy();
-}
 
-void insBI::initWorker(const managerPrx& proxy, double startTime, double step, const Current& c) {
-	this->proxy = proxy;
-	this->currentTime = startTime;
+void insBI::initTime(const timeManagerPrx& proxy, double startTime, double step, const Current& c) {
+	currentTime = startTime;
 	this->step = step;
-	this->currentNumber = 0;
+	timeProxy = proxy;
+	cout << "Acquire Time Proxy!!!" << endl;
+	//其他初始化
+	currentNumber = 0;
 	event ev0;
 	ev0.time = 99999.0;
 	FEL.push_back(ev0);
@@ -41,18 +34,20 @@ void insBI::initWorker(const managerPrx& proxy, double startTime, double step, c
 
 	//End
 	tick();
-	proxy->confirmTime("insB");
+	timeProxy->confirmTime("insB");
 }
 
-void insBI::HANDLEevOrder(double currentTime, const Current& c) {
+void insBI::HANDLEevent(const event& ev, const Current& c) {
+	FEL.push_back(ev);
+}
+
+bool insBI::comp(event ev1, event ev2) {
+	return ev1.time < ev2.time;
+}
+
+void insBI::HANDLEtime(double currentTime, const Current& c) {
 	sort(FEL.begin(), FEL.end(), comp);
 	this->currentTime = currentTime;
-	/********* timeMode = unconfirm */
-	/*
-
-	/********************************/
-	
-	/********** timeMode = confirm **/
 	
 	while((currentTime-FEL[0].time) > 10e-5 ) {
 		//cout << "process lag event：" << FEL[0].name << "  delay time：" << currentTime-FEL[0].time << endl;
@@ -73,27 +68,27 @@ void insBI::HANDLEevOrder(double currentTime, const Current& c) {
 
 		FEL.erase(FEL.begin());
 	}
-	proxy->confirmTime("insB");
-	/********************************/
-}
-
-void insBI::HANDLEevent(const event& ev, const Current& c) {
-	FEL.push_back(ev);
+	timeProxy->confirmTime("insB");
 }
 
 void insBI::tick() {
 	event ev0;
 	ev0.name = "tick";
 	//Todo:handle tick
-
+	ev0.time = currentTime + step;
+	FEL.push_back(ev0);
+	if(((int)currentTime)%10 == 6) {
+		event ev1;
+		ev1.name = "evFromB";
+		ev1.time = currentTime + step;
+		eventProxy->SENDevent(ev1);
+	}
 	//End
 }
 
 void insBI::HANDLEevFromA(event ev) {
-
+	cout << "B is handling A at " << ev.time << endl;
 }
-
-//End
 
 //Todo:user-define functions
 

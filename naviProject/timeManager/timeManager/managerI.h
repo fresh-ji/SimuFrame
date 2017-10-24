@@ -19,7 +19,7 @@ public:
 	virtual void initProxy(const timeManagerPrx& proxy, double startTime, double step, const Current&);
 	virtual bool checkList(const Current&);
 	virtual void confirmTime(const string& modelName, const Current&);
-	virtual void SENDevOrder(double currentTime, const Current&);
+	virtual void SENDtime(double currentTime, const Current&);
 	virtual void shutdown(const Current&);
 	
 	struct list {

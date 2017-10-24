@@ -31,16 +31,18 @@ int main(int argc, char* argv[]) {
 			continue;
 		}
 
+		cout  << "Time Manager is Ready!!!" << endl;
+
 		while(true) {
 			currentTime += step;
 			
 			Ptr->initList();
-			//Ptr->HANDLEevOrder(currentTime);
+			Ptr->SENDtime(currentTime);
 			while(!Ptr->checkList()) {
 				continue;
 			}
 
-			cout << "now step is :  " << currentTime << endl;
+			//cout << "now step is :  " << currentTime << endl;
 		}
 
 		ic->waitForShutdown();

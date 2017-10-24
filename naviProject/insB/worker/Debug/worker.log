@@ -1,0 +1,27 @@
+﻿生成启动时间为 2017/10/24 10:03:49。
+     1>项目“C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\worker\worker.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Debug\worker.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“Debug\worker.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\ZeroC\Ice-3.5.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt sliceDef.cpp workerI.cpp workerMain.cpp
+         workerMain.cpp
+         workerI.cpp
+         sliceDef.cpp
+         正在生成代码...
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\Debug\worker.exe" /NOLOGO /LIBPATH:"C:\Program Files\ZeroC\Ice-3.5.1\lib" iced.lib iceutild.lib icestormd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\worker.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\Debug\worker.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\Debug\worker.lib" /MACHINE:X86 Debug\sliceDef.obj
+         Debug\workerI.obj
+         Debug\workerMain.obj
+         worker.vcxproj -> C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\Debug\worker.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\Debug\worker.exe;#1" /manifest Debug\worker.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\worker.unsuccessfulbuild”。
+         正在对“Debug\worker.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\jihang\Desktop\MY\SimuFrame\naviProject\insB\worker\worker.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:09.00

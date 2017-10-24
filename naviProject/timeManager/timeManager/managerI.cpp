@@ -57,16 +57,16 @@ void timeManagerI::confirmTime(const string& modelName, const Current& c) {
 	}
 }
 
-void timeManagerI::SENDevOrder(double currentTime, const Current& c) {
+void timeManagerI::SENDtime(double currentTime, const Current& c) {
 	Ice::CommunicatorPtr ic;
 	try {
 		int argc = 0;
 		char* argv[1];
 		ic = Ice::initialize(argc, argv);
 		insAPrx insAP = insAPrx::checkedCast(ic->stringToProxy("sentinel:tcp -h 127.0.0.1 -p 12339"));
-		insAP-
+		insAP->HANDLEtime(currentTime);
 		insBPrx insBP = insBPrx::checkedCast(ic->stringToProxy("sentinel:tcp -h 127.0.0.1 -p 12340"));
-		insBP->initTime(proxy, startTime, step);
+		insBP->HANDLEtime(currentTime);
 		ic->destroy();
 	} catch (const Ice::Exception& ex) {
 		cerr << ex << endl;

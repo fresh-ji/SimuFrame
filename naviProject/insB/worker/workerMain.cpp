@@ -1,4 +1,6 @@
+
 #include "workerI.h"
+
 using namespace std;
 using namespace Demo;
 using namespace Ice;
@@ -8,26 +10,16 @@ int main(int argc, char* argv[]) {
 	try {
 		ic = Ice::initialize(argc,argv);
 
-		Ice::ObjectAdapterPtr insBAdapter = ic->createObjectAdapterWithEndpoints("localAdapter", "tcp -h 127.0.0.1 -p 12340");
+		ObjectAdapterPtr Adapter = ic->createObjectAdapterWithEndpoints("Adapter", "tcp -h 127.0.0.1 -p 12340");
 
-		insBPtr insBP = new insBI;
-		Ice::ObjectPrx insBProxy = insBAdapter->addWithUUID(insBP);
+		insBPtr Ptr = new insBI;
 
-		Ice::ObjectPrx insBObj = ic->stringToProxy("LVCIS/TopicManager:tcp -h 127.0.0.1 -p 12337");
+		Adapter->add(Ptr, ic->stringToIdentity("sentinel"));
+		
+		Adapter->activate();
 
-		IceStorm::TopicManagerPrx topicManager = IceStorm::TopicManagerPrx::checkedCast(insBObj);
-		try{
-			IceStorm::QoS qos;
-			topicManager->retrieve("evOrder")->subscribe(qos, insBProxy);
-			
-			topicManager->retrieve("evFromA")->subscribe(qos, insBProxy);
-
-		} catch (const IceStorm::NoSuchTopic&) {
-			cerr << "Error! No Topic Found!" << endl;
-		}
-
-		insBAdapter->activate();
 		cout << "insB is ready!!" << endl;
+
 		ic->waitForShutdown();
 	} catch (const Ice::Exception& ex) {
 		cerr << ex << endl;
