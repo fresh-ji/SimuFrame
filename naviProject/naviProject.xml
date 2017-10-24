@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312"?>
+<frame>
+  <manager>
+    <topic>sentinel:-h 127.0.0.1 -p 12337</topic>
+    <publish>sentinel:-h 127.0.0.1 -p 12338</publish>
+  </manager>
+  <variableDef>struct position {double px;double py;double pz;};</variableDef>
+  <variableDef>sequence&lt;position&gt; seqPoint;</variableDef>
+  <variableDef>sequence&lt;int&gt; seqInteger;</variableDef>
+  <variableDef>sequence&lt;string&gt; seqString;</variableDef>
+  <variableDef>struct event {string name;double time;seqString seqStr;seqInteger seqInt;seqPoint seqPt;};</variableDef>
+  <model name="insA" location="-h 127.0.0.1 -p 12339">
+    <event name="evFromB">HANDLEevFromB</event>
+  </model>
+  <model name="insB" location="-h 127.0.0.1 -p 12340">
+    <event name="evFromA">HANDLEevFromA</event>
+  </model>
+</frame>
