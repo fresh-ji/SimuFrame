@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="gb2312"?>
+<frame>
+  <manager>
+    <eManager>-h 127.0.0.1 -p 12337</eManager>
+    <tManager>-h 127.0.0.1 -p 12338</tManager>
+    <sTime>0.0</sTime>
+    <step>0.1</step>
+  </manager>
+  <variableDef>struct position {double px;double py;double pz;};</variableDef>
+  <variableDef>sequence&lt;position&gt; seqPoint;</variableDef>
+  <variableDef>sequence&lt;int&gt; seqInteger;</variableDef>
+  <variableDef>sequence&lt;string&gt; seqString;</variableDef>
+  <variableDef>struct event {string name;double time;seqString seqStr;seqInteger seqInt;seqPoint seqPt;};</variableDef>
+  <model name="insA" location="-h 127.0.0.1 -p 12339">
+    <event name="evFromB">HANDLEevFromB</event>
+    <event name="evFromBB">HANDLEevFromBB</event>
+    <event name="evFromBBB">HANDLEevFromBBB</event>
+  </model>
+  <model name="insB" location="-h 127.0.0.1 -p 12340">
+    <event name="evFromA">HANDLEevFromA</event>
+    <event name="evFromAA">HANDLEevFromAA</event>
+  </model>
+</frame>

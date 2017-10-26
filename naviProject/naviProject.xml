@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="gb2312"?>
 <frame>
   <manager>
-    <topic>sentinel:-h 127.0.0.1 -p 12337</topic>
-    <publish>sentinel:-h 127.0.0.1 -p 12338</publish>
+    <eManager>-h 127.0.0.1 -p 12337</eManager>
+    <tManager>-h 127.0.0.1 -p 12338</tManager>
+    <sTime>0.0</sTime>
+    <step>0.1</step>
   </manager>
   <variableDef>struct position {double px;double py;double pz;};</variableDef>
   <variableDef>sequence&lt;position&gt; seqPoint;</variableDef>
