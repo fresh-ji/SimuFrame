@@ -12,8 +12,8 @@ using namespace tinyxml2;
 void parse(const char *projdir, char *xml);
 
 int main(int argc, char* argv[]) {
-	//argv[1] = "C:\\Users\\jihang\\Desktop\\MY\\SimuFrame\\autoGenerate\\";
-	//argv[2] = "naviProject.xml";
+	argv[1] = "C:\\Users\\jihang\\Desktop\\MY\\SimuFrame\\autoGenerate\\";
+	argv[2] = "naviProject.xml";
 	parse(argv[1], argv[2]);
 	return 1;
 }
@@ -529,6 +529,17 @@ void parse(const char *projdir, char *xml) {
 		model = model->NextSiblingElement("model");
 	}
 	/************4.写worker部分******************/
+
+	//清空sliceDef
+	strcpy(dir, projdir);
+	strcat(dir, "setFrame\\Debug\\sliceDef.h");
+	fstream f1(dir, ios::out|ios::trunc);
+	f1.close();
+
+	strcpy(dir, projdir);
+	strcat(dir, "setFrame\\Debug\\sliceDef.cpp");
+	fstream f2(dir, ios::out|ios::trunc);
+	f2.close();
 
 	//内存释放且没有内存泄漏
 	delete dir;
