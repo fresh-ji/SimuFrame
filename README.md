@@ -1,8 +1,8 @@
 
 ********************READ ME********************
 
-This Simulation Framework Project(SFP) is Based on Internet Communication Engine.
+This project designed and implemented a Simulation Operational Framework(SOF) Based on Internet Communication Engine.
 
-naviProject shows a outcome of using SFP.
+naviProject shows a outcome of using SOF.
 
-autoGenerate shows a process of producing SFP.
+autoGenerate shows a process of producing SOF.

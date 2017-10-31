@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>textInput</class>
+ <widget class="QDialog" name="textInput">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>628</width>
+    <height>409</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>textInput</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTextEdit" name="textEdit"/>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>textInput</receiver>
+   <slot>okAndExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>264</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>textInput</receiver>
+   <slot>cancelAndExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>161</x>
+     <y>300</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>cancelAndExit()</slot>
+  <slot>okAndExit()</slot>
+ </slots>
+</ui>
