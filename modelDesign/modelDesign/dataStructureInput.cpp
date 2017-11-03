@@ -1,26 +1,26 @@
 #include <QTextCodec>
-#include "textInput.h"
+#include "dataStructureInput.h"
 
-textInput::textInput(QWidget *parent) : QDialog(parent) {
+dataStructureInput::dataStructureInput(QWidget *parent) : QDialog(parent) {
 	ui.setupUi(this);
-	
+
 	this->setWindowFlags(windowFlags() &~ Qt::WindowCloseButtonHint);//关闭按钮失效
 	codec = QTextCodec::codecForName("GB2312");//初始化字体
 	isOk = false;
 }
 
-textInput::~textInput() {
+dataStructureInput::~dataStructureInput() {
 
 }
 
-void textInput::okAndExit() {
+void dataStructureInput::okAndExit() {
 	content = ui.textEdit->toPlainText();
 	isOk = true;
-	ui.textEdit->clear();
+	//ui.textEdit->clear();
 	this->close();
 }
 
-void textInput::cancelAndExit() {
-	ui.textEdit->clear();
+void dataStructureInput::cancelAndExit() {
+	//ui.textEdit->clear();
 	this->close();
 }

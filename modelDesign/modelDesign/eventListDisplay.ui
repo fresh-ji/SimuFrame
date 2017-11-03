@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>eventListDisplay</class>
+ <widget class="QDialog" name="eventListDisplay">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>359</width>
+    <height>273</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>eventListDisplay</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QListWidget" name="listWidget">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>eventListDisplay</receiver>
+   <slot>okAndExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>239</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>130</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>eventListDisplay</receiver>
+   <slot>cancelAndExit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>190</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>okAndExit()</slot>
+  <slot>cancelAndExit()</slot>
+ </slots>
+</ui>

@@ -3,11 +3,14 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_mainWindow.h"
-#include "textInput.h"
-#include "messageInput.h"
+#include "dataStructureInput.h"
+#include "eventTypeInput.h"
+#include "modelTypeInput.h"
+#include "eventListDisplay.h"
+#include "warning.h"
 
-class mainWindow : public QMainWindow  
-{
+class mainWindow : public QMainWindow {
+
 	Q_OBJECT
 
 public:
@@ -15,16 +18,28 @@ public:
 	~mainWindow();
 
 	public slots:
-		void openTextInput();
-		void openMessageInput();
+		void openDataStructureInput();
+		void addEventType();
+		void deleteEventType();
+		void editEventType();
+		void addModelType();
+		void deleteModelType();
+		void editModelType();
+		void addSubscribe();
+		void deleteSubscribe();
+		void addFunctions();
+		void generate();
 
 private:
 	Ui::mainWindowClass ui;
 
 	QTextCodec *codec;//±àÂë·½Ê½
 
-	textInput ti;
-	messageInput mi;
+	dataStructureInput dsi;
+	eventTypeInput eti;
+	modelTypeInput mti;
+	eventListDisplay etd;
+	warning WARNING;
 };
 
 #endif // MAINWINDOW_H

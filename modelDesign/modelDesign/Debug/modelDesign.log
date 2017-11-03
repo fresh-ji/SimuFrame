@@ -1,25 +1,30 @@
-﻿生成启动时间为 2017/10/30 17:45:43。
+﻿生成启动时间为 2017/11/3 11:10:47。
      1>项目“C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\modelDesign\modelDesign.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug\modelDesign.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        CustomBuild:
-         Uic'ing mainWindow.ui...
+         所有输出均为最新。
        ClCompile:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.1\5.5\msvc2010\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.1\5.5\msvc2010\include\QtCore /IC:\Qt\Qt5.5.1\5.5\msvc2010\include\QtGui /IC:\Qt\Qt5.5.1\5.5\msvc2010\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\Debug\moc_mainWindow.cpp main.cpp mainWindow.cpp
-         moc_mainWindow.cpp
-         main.cpp
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\Qt5.5.1\5.5\msvc2010\include /I.\GeneratedFiles\Debug /IC:\Qt\Qt5.5.1\5.5\msvc2010\include\QtCore /IC:\Qt\Qt5.5.1\5.5\msvc2010\include\QtGui /IC:\Qt\Qt5.5.1\5.5\msvc2010\include\QtWidgets /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D WIN64 /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /D QT_WIDGETS_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt mainWindow.cpp
          mainWindow.cpp
-         正在生成代码...
          所有输出均为最新。
        Link:
-         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\\modelDesign.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.5.1\5.5\msvc2010\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\modelDesign.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\modelDesign.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\modelDesign.lib" /MACHINE:X86 Debug\moc_mainWindow.obj
-         Debug\moc_messageInput.obj
-         Debug\moc_textInput.obj
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\\modelDesign.exe" /NOLOGO /LIBPATH:C:\Qt\Qt5.5.1\5.5\msvc2010\lib qtmaind.lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\modelDesign.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\modelDesign.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\modelDesign.lib" /MACHINE:X86 Debug\dataStructureInput.obj
+         Debug\eventFunctionInput.obj
+         Debug\eventListDisplay.obj
+         Debug\eventTypeInput.obj
+         Debug\moc_dataStructureInput.obj
+         Debug\moc_eventFunctionInput.obj
+         Debug\moc_eventListDisplay.obj
+         Debug\moc_eventTypeInput.obj
+         Debug\moc_mainWindow.obj
+         Debug\moc_modelTypeInput.obj
+         Debug\moc_warning.obj
          Debug\qrc_mainWindow.obj
          Debug\main.obj
          Debug\mainWindow.obj
-         Debug\messageInput.obj
-         Debug\textInput.obj
+         Debug\modelTypeInput.obj
+         Debug\warning.obj
          LINK : 没有找到 C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\\modelDesign.exe 或上一个增量链接没有生成它；正在执行完全链接
          modelDesign.vcxproj -> C:\Users\jihang\Desktop\MY\SimuFrame\modelDesign\Win32\Debug\modelDesign.exe
        Manifest:
@@ -31,4 +36,4 @@
 
 生成成功。
 
-已用时间 00:00:08.41
+已用时间 00:00:02.12

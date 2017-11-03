@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'messageInput.h'
+** Meta object code from reading C++ file 'dataStructureInput.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../messageInput.h"
+#include "../../dataStructureInput.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'messageInput.h' doesn't include <QObject>."
+#error "The header file 'dataStructureInput.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.5.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,28 +18,29 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_messageInput_t {
+struct qt_meta_stringdata_dataStructureInput_t {
     QByteArrayData data[4];
-    char stringdata0[38];
+    char stringdata0[44];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_messageInput_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_dataStructureInput_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_messageInput_t qt_meta_stringdata_messageInput = {
+static const qt_meta_stringdata_dataStructureInput_t qt_meta_stringdata_dataStructureInput = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "messageInput"
-QT_MOC_LITERAL(1, 13, 9), // "okAndExit"
-QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 13) // "cancelAndExit"
+QT_MOC_LITERAL(0, 0, 18), // "dataStructureInput"
+QT_MOC_LITERAL(1, 19, 9), // "okAndExit"
+QT_MOC_LITERAL(2, 29, 0), // ""
+QT_MOC_LITERAL(3, 30, 13) // "cancelAndExit"
 
     },
-    "messageInput\0okAndExit\0\0cancelAndExit"
+    "dataStructureInput\0okAndExit\0\0"
+    "cancelAndExit"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_messageInput[] = {
+static const uint qt_meta_data_dataStructureInput[] = {
 
  // content:
        7,       // revision
@@ -63,10 +64,10 @@ static const uint qt_meta_data_messageInput[] = {
        0        // eod
 };
 
-void messageInput::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void dataStructureInput::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        messageInput *_t = static_cast<messageInput *>(_o);
+        dataStructureInput *_t = static_cast<dataStructureInput *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->okAndExit(); break;
@@ -77,26 +78,26 @@ void messageInput::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     Q_UNUSED(_a);
 }
 
-const QMetaObject messageInput::staticMetaObject = {
-    { &QDialog::staticMetaObject, qt_meta_stringdata_messageInput.data,
-      qt_meta_data_messageInput,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject dataStructureInput::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_dataStructureInput.data,
+      qt_meta_data_dataStructureInput,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *messageInput::metaObject() const
+const QMetaObject *dataStructureInput::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *messageInput::qt_metacast(const char *_clname)
+void *dataStructureInput::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_messageInput.stringdata0))
-        return static_cast<void*>(const_cast< messageInput*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_dataStructureInput.stringdata0))
+        return static_cast<void*>(const_cast< dataStructureInput*>(this));
     return QDialog::qt_metacast(_clname);
 }
 
-int messageInput::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int dataStructureInput::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)

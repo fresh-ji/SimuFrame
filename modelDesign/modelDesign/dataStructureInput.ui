@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>textInput</class>
- <widget class="QDialog" name="textInput">
+ <class>dataStructureInput</class>
+ <widget class="QDialog" name="dataStructureInput">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>628</width>
-    <height>409</height>
+    <width>874</width>
+    <height>522</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>textInput</string>
+   <string>dataStructureInput</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -32,38 +32,38 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>textInput</receiver>
+   <receiver>dataStructureInput</receiver>
    <slot>okAndExit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>16</x>
-     <y>402</y>
+     <x>742</x>
+     <y>504</y>
     </hint>
     <hint type="destinationlabel">
-     <x>4</x>
-     <y>264</y>
+     <x>742</x>
+     <y>521</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>textInput</receiver>
+   <receiver>dataStructureInput</receiver>
    <slot>cancelAndExit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>160</x>
-     <y>402</y>
+     <x>832</x>
+     <y>504</y>
     </hint>
     <hint type="destinationlabel">
-     <x>161</x>
-     <y>300</y>
+     <x>833</x>
+     <y>517</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>cancelAndExit()</slot>
   <slot>okAndExit()</slot>
+  <slot>cancelAndExit()</slot>
  </slots>
 </ui>

@@ -50,22 +50,58 @@
     <ClCompile Include="GeneratedFiles\qrc_mainWindow.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="textInput.cpp">
+    <ClCompile Include="dataStructureInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_textInput.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_dataStructureInput.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_textInput.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_dataStructureInput.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="messageInput.cpp">
+    <ClCompile Include="eventTypeInput.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_messageInput.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_eventTypeInput.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_messageInput.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_eventTypeInput.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="modelTypeInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_modelTypeInput.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_modelTypeInput.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="warning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_warning.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_warning.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="eventListDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_eventListDisplay.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_eventListDisplay.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="eventFunctionInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_eventFunctionInput.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_eventFunctionInput.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,16 +115,40 @@
     <CustomBuild Include="mainWindow.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="textInput.h">
+    <CustomBuild Include="dataStructureInput.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="textInput.ui">
+    <CustomBuild Include="dataStructureInput.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="messageInput.h">
+    <CustomBuild Include="eventTypeInput.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="messageInput.ui">
+    <CustomBuild Include="eventTypeInput.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="modelTypeInput.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="modelTypeInput.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="warning.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="warning.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="eventListDisplay.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="eventListDisplay.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="eventFunctionInput.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="eventFunctionInput.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
@@ -96,10 +156,22 @@
     <ClInclude Include="GeneratedFiles\ui_mainWindow.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_textInput.h">
+    <ClInclude Include="GeneratedFiles\ui_dataStructureInput.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_messageInput.h">
+    <ClInclude Include="GeneratedFiles\ui_eventTypeInput.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_modelTypeInput.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_warning.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_eventListDisplay.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_eventFunctionInput.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
