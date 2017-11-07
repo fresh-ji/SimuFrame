@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>964</width>
-    <height>697</height>
+    <width>910</width>
+    <height>694</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -507,10 +507,24 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>964</width>
+     <width>910</width>
      <height>23</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>打开</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_2"/>
+    <addaction name="action_3"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -521,6 +535,31 @@ p, li { white-space: pre-wrap; }
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="action">
+   <property name="text">
+    <string>示例</string>
+   </property>
+  </action>
+  <action name="actionA">
+   <property name="text">
+    <string>a</string>
+   </property>
+  </action>
+  <action name="actionB">
+   <property name="text">
+    <string>b</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>示例</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
@@ -534,8 +573,8 @@ p, li { white-space: pre-wrap; }
    <slot>openDataStructureInput()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>393</x>
-     <y>271</y>
+     <x>441</x>
+     <y>340</y>
     </hint>
     <hint type="destinationlabel">
      <x>276</x>
@@ -550,8 +589,8 @@ p, li { white-space: pre-wrap; }
    <slot>addEventType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>163</x>
-     <y>543</y>
+     <x>227</x>
+     <y>628</y>
     </hint>
     <hint type="destinationlabel">
      <x>124</x>
@@ -566,8 +605,8 @@ p, li { white-space: pre-wrap; }
    <slot>deleteEventType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>331</x>
-     <y>543</y>
+     <x>333</x>
+     <y>628</y>
     </hint>
     <hint type="destinationlabel">
      <x>233</x>
@@ -582,8 +621,8 @@ p, li { white-space: pre-wrap; }
    <slot>editEventType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>412</x>
-     <y>543</y>
+     <x>441</x>
+     <y>652</y>
     </hint>
     <hint type="destinationlabel">
      <x>386</x>
@@ -598,8 +637,8 @@ p, li { white-space: pre-wrap; }
    <slot>addModelType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>644</x>
-     <y>271</y>
+     <x>678</x>
+     <y>340</y>
     </hint>
     <hint type="destinationlabel">
      <x>581</x>
@@ -614,8 +653,8 @@ p, li { white-space: pre-wrap; }
    <slot>deleteModelType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>748</x>
-     <y>271</y>
+     <x>784</x>
+     <y>340</y>
     </hint>
     <hint type="destinationlabel">
      <x>595</x>
@@ -630,8 +669,8 @@ p, li { white-space: pre-wrap; }
    <slot>editModelType()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>864</x>
-     <y>271</y>
+     <x>890</x>
+     <y>340</y>
     </hint>
     <hint type="destinationlabel">
      <x>589</x>
@@ -646,8 +685,8 @@ p, li { white-space: pre-wrap; }
    <slot>addSubscribe()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>564</x>
-     <y>543</y>
+     <x>567</x>
+     <y>652</y>
     </hint>
     <hint type="destinationlabel">
      <x>580</x>
@@ -662,8 +701,8 @@ p, li { white-space: pre-wrap; }
    <slot>deleteSubscribe()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>670</x>
-     <y>543</y>
+     <x>674</x>
+     <y>652</y>
     </hint>
     <hint type="destinationlabel">
      <x>681</x>
@@ -678,8 +717,8 @@ p, li { white-space: pre-wrap; }
    <slot>addFunctions()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>780</x>
-     <y>543</y>
+     <x>784</x>
+     <y>652</y>
     </hint>
     <hint type="destinationlabel">
      <x>805</x>
@@ -694,12 +733,44 @@ p, li { white-space: pre-wrap; }
    <slot>generate()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>844</x>
-     <y>543</y>
+     <x>890</x>
+     <y>652</y>
     </hint>
     <hint type="destinationlabel">
      <x>623</x>
      <y>392</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_2</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>openExample()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_3</sender>
+   <signal>triggered()</signal>
+   <receiver>mainWindowClass</receiver>
+   <slot>openHelp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>454</x>
+     <y>346</y>
     </hint>
    </hints>
   </connection>
@@ -717,5 +788,7 @@ p, li { white-space: pre-wrap; }
   <slot>deleteSubscribe()</slot>
   <slot>addFunctions()</slot>
   <slot>generate()</slot>
+  <slot>openExample()</slot>
+  <slot>openHelp()</slot>
  </slots>
 </ui>

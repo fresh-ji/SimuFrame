@@ -17,6 +17,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -30,6 +31,11 @@ QT_BEGIN_NAMESPACE
 class Ui_mainWindowClass
 {
 public:
+    QAction *action;
+    QAction *actionA;
+    QAction *actionB;
+    QAction *action_2;
+    QAction *action_3;
     QWidget *centralWidget;
     QGridLayout *gridLayout;
     QGroupBox *groupBox_4;
@@ -56,6 +62,8 @@ public:
     QTreeWidget *treeWidget_2;
     QPushButton *pushButton_6;
     QMenuBar *menuBar;
+    QMenu *menu;
+    QMenu *menu_2;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -63,9 +71,19 @@ public:
     {
         if (mainWindowClass->objectName().isEmpty())
             mainWindowClass->setObjectName(QStringLiteral("mainWindowClass"));
-        mainWindowClass->resize(964, 697);
+        mainWindowClass->resize(910, 694);
         mainWindowClass->setMinimumSize(QSize(0, 0));
         mainWindowClass->setMaximumSize(QSize(16777215, 16777215));
+        action = new QAction(mainWindowClass);
+        action->setObjectName(QStringLiteral("action"));
+        actionA = new QAction(mainWindowClass);
+        actionA->setObjectName(QStringLiteral("actionA"));
+        actionB = new QAction(mainWindowClass);
+        actionB->setObjectName(QStringLiteral("actionB"));
+        action_2 = new QAction(mainWindowClass);
+        action_2->setObjectName(QStringLiteral("action_2"));
+        action_3 = new QAction(mainWindowClass);
+        action_3->setObjectName(QStringLiteral("action_3"));
         centralWidget = new QWidget(mainWindowClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -293,7 +311,11 @@ public:
         mainWindowClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(mainWindowClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 964, 23));
+        menuBar->setGeometry(QRect(0, 0, 910, 23));
+        menu = new QMenu(menuBar);
+        menu->setObjectName(QStringLiteral("menu"));
+        menu_2 = new QMenu(menuBar);
+        menu_2->setObjectName(QStringLiteral("menu_2"));
         mainWindowClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(mainWindowClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -301,6 +323,11 @@ public:
         statusBar = new QStatusBar(mainWindowClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         mainWindowClass->setStatusBar(statusBar);
+
+        menuBar->addAction(menu->menuAction());
+        menuBar->addAction(menu_2->menuAction());
+        menu_2->addAction(action_2);
+        menu_2->addAction(action_3);
 
         retranslateUi(mainWindowClass);
         QObject::connect(pushButton, SIGNAL(clicked()), mainWindowClass, SLOT(openDataStructureInput()));
@@ -314,6 +341,8 @@ public:
         QObject::connect(pushButton_9, SIGNAL(clicked()), mainWindowClass, SLOT(deleteSubscribe()));
         QObject::connect(pushButton_10, SIGNAL(clicked()), mainWindowClass, SLOT(addFunctions()));
         QObject::connect(pushButton_11, SIGNAL(clicked()), mainWindowClass, SLOT(generate()));
+        QObject::connect(action_2, SIGNAL(triggered()), mainWindowClass, SLOT(openExample()));
+        QObject::connect(action_3, SIGNAL(triggered()), mainWindowClass, SLOT(openHelp()));
 
         QMetaObject::connectSlotsByName(mainWindowClass);
     } // setupUi
@@ -321,6 +350,11 @@ public:
     void retranslateUi(QMainWindow *mainWindowClass)
     {
         mainWindowClass->setWindowTitle(QApplication::translate("mainWindowClass", "mainWindow", 0));
+        action->setText(QApplication::translate("mainWindowClass", "\347\244\272\344\276\213", 0));
+        actionA->setText(QApplication::translate("mainWindowClass", "a", 0));
+        actionB->setText(QApplication::translate("mainWindowClass", "b", 0));
+        action_2->setText(QApplication::translate("mainWindowClass", "\347\244\272\344\276\213", 0));
+        action_3->setText(QApplication::translate("mainWindowClass", "\345\205\263\344\272\216", 0));
         groupBox_4->setTitle(QApplication::translate("mainWindowClass", "\350\201\224\351\202\246\345\273\272\346\250\241", 0));
         pushButton_8->setText(QApplication::translate("mainWindowClass", "\346\267\273\345\212\240\350\256\242\351\230\205", 0));
         pushButton_9->setText(QApplication::translate("mainWindowClass", "\345\210\240\351\231\244\350\256\242\351\230\205", 0));
@@ -341,6 +375,8 @@ public:
         pushButton_7->setText(QApplication::translate("mainWindowClass", "\347\274\226\350\276\221", 0));
         pushButton_5->setText(QApplication::translate("mainWindowClass", "\346\267\273\345\212\240", 0));
         pushButton_6->setText(QApplication::translate("mainWindowClass", "\345\210\240\351\231\244", 0));
+        menu->setTitle(QApplication::translate("mainWindowClass", "\346\211\223\345\274\200", 0));
+        menu_2->setTitle(QApplication::translate("mainWindowClass", "\345\270\256\345\212\251", 0));
     } // retranslateUi
 
 };

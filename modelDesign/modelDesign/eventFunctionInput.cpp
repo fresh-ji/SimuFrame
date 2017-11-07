@@ -14,7 +14,6 @@ eventFunctionInput::~eventFunctionInput() {
 }
 
 void eventFunctionInput::okAndExit() {
-
 	content = ui.textEdit->toPlainText();
 	isOk = true;
 	ui.textEdit->clear();

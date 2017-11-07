@@ -13,7 +13,7 @@ void parse(const char *projdir, char *xml);
 
 int main(int argc, char* argv[]) {
 	argv[1] = "C:\\Users\\jihang\\Desktop\\MY\\SimuFrame\\autoGenerate\\";
-	argv[2] = "naviProject.xml";
+	argv[2] = "model.xml";
 	parse(argv[1], argv[2]);
 	return 1;
 }

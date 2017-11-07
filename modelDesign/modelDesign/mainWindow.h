@@ -7,6 +7,7 @@
 #include "eventTypeInput.h"
 #include "modelTypeInput.h"
 #include "eventListDisplay.h"
+#include "eventFunctionInput.h"
 #include "warning.h"
 
 class mainWindow : public QMainWindow {
@@ -29,6 +30,8 @@ public:
 		void deleteSubscribe();
 		void addFunctions();
 		void generate();
+		void openExample();
+		void openHelp();
 
 private:
 	Ui::mainWindowClass ui;
@@ -39,7 +42,10 @@ private:
 	eventTypeInput eti;
 	modelTypeInput mti;
 	eventListDisplay etd;
+	eventFunctionInput efi;
 	warning WARNING;
+
+	QMap<QString, QString> functionMap;
 };
 
 #endif // MAINWINDOW_H
